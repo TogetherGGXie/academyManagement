@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.academymanagement.mapper.AppointmentMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.demo.academymanagement.modal.Appointment">
+        <id column="appointment_id" property="appointmentId" />
+        <result column="user_info_id" property="userInfoId" />
+        <result column="user_id" property="userId" />
+        <result column="real_name" property="realName" />
+        <result column="phone_num" property="phoneNum" />
+        <result column="create_time" property="createTime" />
+        <result column="order_time" property="orderTime" />
+        <result column="status" property="status" />
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,26 @@
+server:
+  port: 8000
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost/academy_management?useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+mybatis-plus:
+  mapper-locations: classpath:com/demo/academymanagement/mapper/mapping/*.xml
+  typeAliasesPackage: com.demo.academymanagement.modal
+  map-underscore-to-camel-case : true
+#  servlet:
+#    multipart:
+#      # 文件传输大小最大值设置
+#      max-file-size: 2Mb
+#      max-request-size: 100Mb
+
+
