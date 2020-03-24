@@ -6,10 +6,10 @@
     <resultMap id="BaseResultMap" type="com.demo.academymanagement.modal.Booking">
         <id column="meeting_id" property="meetingId" />
         <result column="room_id" property="roomId" />
+        <result column="user_id" property="userId" />
         <result column="start_time" property="startTime" />
         <result column="end_time" property="endTime" />
         <result column="create_time" property="createTime" />
-        <result column="created_by" property="createdBy" />
         <result column="status" property="status" />
     </resultMap>
 

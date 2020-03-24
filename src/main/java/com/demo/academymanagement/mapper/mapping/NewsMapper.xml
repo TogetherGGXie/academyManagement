@@ -5,7 +5,7 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.demo.academymanagement.modal.News">
         <id column="news_id" property="newsId" />
-        <result column="news_type_id" property="newsTypeId" />
+        <result column="news_type" property="newsType" />
         <result column="news_title" property="newsTitle" />
         <result column="news_image" property="newsImage" />
         <result column="news_brief" property="newsBrief" />

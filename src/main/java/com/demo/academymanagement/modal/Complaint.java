@@ -13,7 +13,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author XieZhiyang123
- * @since 2020-03-01
+ * @since 2020-03-24
  */
 @TableName("complaint")
 public class Complaint implements Serializable {
@@ -30,11 +30,6 @@ public class Complaint implements Serializable {
      */
     @TableField("user_id")
     private Integer userId;
-    /**
-     * 小程序用户编号
-     */
-    @TableField("wx_user_id")
-    private Integer wxUserId;
     /**
      * 投诉内容
      */
@@ -88,14 +83,6 @@ public class Complaint implements Serializable {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
-    }
-
-    public Integer getWxUserId() {
-        return wxUserId;
-    }
-
-    public void setWxUserId(Integer wxUserId) {
-        this.wxUserId = wxUserId;
     }
 
     public String getContent() {
@@ -175,7 +162,6 @@ public class Complaint implements Serializable {
         return "Complaint{" +
         ", complaintId=" + complaintId +
         ", userId=" + userId +
-        ", wxUserId=" + wxUserId +
         ", content=" + content +
         ", type=" + type +
         ", reply=" + reply +

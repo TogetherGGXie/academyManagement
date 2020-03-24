@@ -12,7 +12,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author XieZhiyang123
- * @since 2020-03-01
+ * @since 2020-03-24
  */
 @TableName("news_statis")
 public class NewsStatis implements Serializable {
@@ -23,7 +23,6 @@ public class NewsStatis implements Serializable {
     private Integer newsId;
     @TableField("page_view")
     private Integer pageView;
-    private String type;
     @TableField("create_time")
     private Date createTime;
     @TableField("last_upd_time")
@@ -44,14 +43,6 @@ public class NewsStatis implements Serializable {
 
     public void setPageView(Integer pageView) {
         this.pageView = pageView;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public Date getCreateTime() {
@@ -75,7 +66,6 @@ public class NewsStatis implements Serializable {
         return "NewsStatis{" +
         ", newsId=" + newsId +
         ", pageView=" + pageView +
-        ", type=" + type +
         ", createTime=" + createTime +
         ", lastUpdTime=" + lastUpdTime +
         "}";

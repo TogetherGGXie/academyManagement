@@ -13,22 +13,40 @@ import java.io.Serializable;
  * </p>
  *
  * @author XieZhiyang123
- * @since 2020-03-01
+ * @since 2020-03-24
  */
 @TableName("office")
 public class Office implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "house_id", type = IdType.AUTO)
-    private Integer houseId;
-    @TableField("house_type")
-    private String houseType;
-    @TableField("house_name")
-    private String houseName;
-    @TableField("house_img")
-    private String houseImg;
+    /**
+     * 办公室id
+     */
+    @TableId(value = "office_id", type = IdType.AUTO)
+    private Integer officeId;
+    /**
+     * 办公室类型
+     */
+    @TableField("office_type")
+    private String officeType;
+    /**
+     * 办公室名称
+     */
+    @TableField("office_name")
+    private String officeName;
+    /**
+     * 图片
+     */
+    @TableField("office_img")
+    private String officeImg;
+    /**
+     * 地址
+     */
     private String address;
+    /**
+     * 联络方式
+     */
     @TableField("phone_num")
     private String phoneNum;
     /**
@@ -39,36 +57,36 @@ public class Office implements Serializable {
     private Date createTime;
 
 
-    public Integer getHouseId() {
-        return houseId;
+    public Integer getOfficeId() {
+        return officeId;
     }
 
-    public void setHouseId(Integer houseId) {
-        this.houseId = houseId;
+    public void setOfficeId(Integer officeId) {
+        this.officeId = officeId;
     }
 
-    public String getHouseType() {
-        return houseType;
+    public String getOfficeType() {
+        return officeType;
     }
 
-    public void setHouseType(String houseType) {
-        this.houseType = houseType;
+    public void setOfficeType(String officeType) {
+        this.officeType = officeType;
     }
 
-    public String getHouseName() {
-        return houseName;
+    public String getOfficeName() {
+        return officeName;
     }
 
-    public void setHouseName(String houseName) {
-        this.houseName = houseName;
+    public void setOfficeName(String officeName) {
+        this.officeName = officeName;
     }
 
-    public String getHouseImg() {
-        return houseImg;
+    public String getOfficeImg() {
+        return officeImg;
     }
 
-    public void setHouseImg(String houseImg) {
-        this.houseImg = houseImg;
+    public void setOfficeImg(String officeImg) {
+        this.officeImg = officeImg;
     }
 
     public String getAddress() {
@@ -106,10 +124,10 @@ public class Office implements Serializable {
     @Override
     public String toString() {
         return "Office{" +
-        ", houseId=" + houseId +
-        ", houseType=" + houseType +
-        ", houseName=" + houseName +
-        ", houseImg=" + houseImg +
+        ", officeId=" + officeId +
+        ", officeType=" + officeType +
+        ", officeName=" + officeName +
+        ", officeImg=" + officeImg +
         ", address=" + address +
         ", phoneNum=" + phoneNum +
         ", status=" + status +

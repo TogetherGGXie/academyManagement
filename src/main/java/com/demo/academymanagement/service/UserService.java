@@ -1,6 +1,6 @@
 package com.demo.academymanagement.service;
 
-import com.demo.academymanagement.modal.Booking;
+import com.demo.academymanagement.modal.User;
 import com.baomidou.mybatisplus.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.service.IService;
  * @author XieZhiyang123
  * @since 2020-03-24
  */
-public interface BookingService extends IService<Booking> {
+public interface UserService extends IService<User> {
 
 }

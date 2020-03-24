@@ -1,8 +1,8 @@
 package com.demo.academymanagement.service.serviceImpl;
 
-import com.demo.academymanagement.modal.Booking;
-import com.demo.academymanagement.mapper.BookingMapper;
-import com.demo.academymanagement.service.BookingService;
+import com.demo.academymanagement.modal.User;
+import com.demo.academymanagement.mapper.UserMapper;
+import com.demo.academymanagement.service.UserService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2020-03-24
  */
 @Service
-public class BookingServiceImpl extends ServiceImpl<BookingMapper, Booking> implements BookingService {
+public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
 }

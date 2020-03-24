@@ -13,7 +13,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author XieZhiyang123
- * @since 2020-03-01
+ * @since 2020-03-24
  */
 @TableName("comment")
 public class Comment implements Serializable {
@@ -28,12 +28,12 @@ public class Comment implements Serializable {
     @TableField("comment_time_id")
     private Integer commentTimeId;
     /**
-     * 用户编号
+     * 导师编号
      */
-    @TableField("user_info_id")
-    private Integer userInfoId;
+    @TableField("sup_id")
+    private Integer supId;
     /**
-     * 代表编号
+     * 用户编号
      */
     @TableField("user_id")
     private Integer userId;
@@ -69,12 +69,12 @@ public class Comment implements Serializable {
         this.commentTimeId = commentTimeId;
     }
 
-    public Integer getUserInfoId() {
-        return userInfoId;
+    public Integer getSupId() {
+        return supId;
     }
 
-    public void setUserInfoId(Integer userInfoId) {
-        this.userInfoId = userInfoId;
+    public void setSupId(Integer supId) {
+        this.supId = supId;
     }
 
     public Integer getUserId() {
@@ -122,7 +122,7 @@ public class Comment implements Serializable {
         return "Comment{" +
         ", commentId=" + commentId +
         ", commentTimeId=" + commentTimeId +
-        ", userInfoId=" + userInfoId +
+        ", supId=" + supId +
         ", userId=" + userId +
         ", score=" + score +
         ", content=" + content +

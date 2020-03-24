@@ -1,6 +1,8 @@
 package com.demo.academymanagement.modal;
 
+import com.baomidou.mybatisplus.enums.IdType;
 import java.util.Date;
+import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
@@ -11,14 +13,15 @@ import java.io.Serializable;
  * </p>
  *
  * @author XieZhiyang123
- * @since 2020-03-01
+ * @since 2020-03-24
  */
 @TableName("supervisor")
 public class Supervisor implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer id;
+    @TableId(value = "sup_id", type = IdType.AUTO)
+    private Integer supId;
     /**
      * 姓名
      */
@@ -87,12 +90,12 @@ public class Supervisor implements Serializable {
     private Integer status;
 
 
-    public Integer getId() {
-        return id;
+    public Integer getSupId() {
+        return supId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setSupId(Integer supId) {
+        this.supId = supId;
     }
 
     public String getName() {
@@ -234,7 +237,7 @@ public class Supervisor implements Serializable {
     @Override
     public String toString() {
         return "Supervisor{" +
-        ", id=" + id +
+        ", supId=" + supId +
         ", name=" + name +
         ", type=" + type +
         ", surname=" + surname +

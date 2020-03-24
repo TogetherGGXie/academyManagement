@@ -9,9 +9,8 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * </p>
  *
  * @author XieZhiyang123
- * @since 2020-03-01
+ * @since 2020-03-24
  */
-
 public interface AppointmentCommentMapper extends BaseMapper<AppointmentComment> {
 
 }

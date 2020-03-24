@@ -13,7 +13,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author XieZhiyang123
- * @since 2020-03-01
+ * @since 2020-03-24
  */
 @TableName("news")
 public class News implements Serializable {
@@ -28,8 +28,8 @@ public class News implements Serializable {
     /**
      * 类型编号
      */
-    @TableField("news_type_id")
-    private Integer newsTypeId;
+    @TableField("news_type")
+    private Integer newsType;
     /**
      * 标题
      */
@@ -75,12 +75,12 @@ public class News implements Serializable {
         this.newsId = newsId;
     }
 
-    public Integer getNewsTypeId() {
-        return newsTypeId;
+    public Integer getNewsType() {
+        return newsType;
     }
 
-    public void setNewsTypeId(Integer newsTypeId) {
-        this.newsTypeId = newsTypeId;
+    public void setNewsType(Integer newsType) {
+        this.newsType = newsType;
     }
 
     public String getNewsTitle() {
@@ -151,7 +151,7 @@ public class News implements Serializable {
     public String toString() {
         return "News{" +
         ", newsId=" + newsId +
-        ", newsTypeId=" + newsTypeId +
+        ", newsType=" + newsType +
         ", newsTitle=" + newsTitle +
         ", newsImage=" + newsImage +
         ", newsBrief=" + newsBrief +

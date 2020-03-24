@@ -7,15 +7,15 @@ import org.springframework.stereotype.Controller;
 
 /**
  * <p>
- * 活动信息表 前端控制器
+ *  前端控制器
  * </p>
  *
  * @author XieZhiyang123
- * @since 2020-03-01
+ * @since 2020-03-24
  */
 @Controller
-@RequestMapping("/activity")
-public class ActivityController {
+@RequestMapping("/user")
+public class UserController {
 
 }
 

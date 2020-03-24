@@ -6,7 +6,6 @@
     <resultMap id="BaseResultMap" type="com.demo.academymanagement.modal.NewsStatis">
         <id column="news_id" property="newsId" />
         <result column="page_view" property="pageView" />
-        <result column="type" property="type" />
         <result column="create_time" property="createTime" />
         <result column="last_upd_time" property="lastUpdTime" />
     </resultMap>

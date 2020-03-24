@@ -4,10 +4,10 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.demo.academymanagement.modal.Office">
-        <id column="house_id" property="houseId" />
-        <result column="house_type" property="houseType" />
-        <result column="house_name" property="houseName" />
-        <result column="house_img" property="houseImg" />
+        <id column="office_id" property="officeId" />
+        <result column="office_type" property="officeType" />
+        <result column="office_name" property="officeName" />
+        <result column="office_img" property="officeImg" />
         <result column="address" property="address" />
         <result column="phone_num" property="phoneNum" />
         <result column="status" property="status" />

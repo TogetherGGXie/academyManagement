@@ -13,7 +13,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author XieZhiyang123
- * @since 2020-03-01
+ * @since 2020-03-24
  */
 @TableName("meeting_room")
 public class MeetingRoom implements Serializable {

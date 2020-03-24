@@ -13,7 +13,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author XieZhiyang123
- * @since 2020-03-01
+ * @since 2020-03-24
  */
 @TableName("admin")
 public class Admin implements Serializable {
@@ -39,7 +39,7 @@ public class Admin implements Serializable {
     @TableField("pass_word")
     private String passWord;
     /**
-     * 1:超级管理员  2:普通管理员 3:中间人
+     * 1:超级管理员  2:普通管理员 
      */
     private Integer role;
     /**
@@ -50,15 +50,6 @@ public class Admin implements Serializable {
     private Date createTime;
     @TableField("phone_num")
     private String phoneNum;
-    /**
-     * 是否接收提醒 0：不接收  1：接收
-     */
-    @TableField("receive_notice")
-    private Integer receiveNotice;
-    /**
-     * 中间人负责的选区
-     */
-    private Integer district;
 
 
     public Integer getAdminId() {
@@ -125,22 +116,6 @@ public class Admin implements Serializable {
         this.phoneNum = phoneNum;
     }
 
-    public Integer getReceiveNotice() {
-        return receiveNotice;
-    }
-
-    public void setReceiveNotice(Integer receiveNotice) {
-        this.receiveNotice = receiveNotice;
-    }
-
-    public Integer getDistrict() {
-        return district;
-    }
-
-    public void setDistrict(Integer district) {
-        this.district = district;
-    }
-
     @Override
     public String toString() {
         return "Admin{" +
@@ -152,8 +127,6 @@ public class Admin implements Serializable {
         ", status=" + status +
         ", createTime=" + createTime +
         ", phoneNum=" + phoneNum +
-        ", receiveNotice=" + receiveNotice +
-        ", district=" + district +
         "}";
     }
 }

@@ -53,10 +53,10 @@ public class CodeGenerator {
         // 表名生成策略
         strategy.setNaming(NamingStrategy.underline_to_camel);
         // 需要生成的表
-        strategy.setInclude(new String[] {"activity", "admin", "appointment", "appointment_comment",
+        strategy.setInclude(new String[] {"admin", "appointment", "appointment_comment",
                                             "booking", "comment", "comment_time", "complaint", "meeting_room",
-                                            "news", "news_statis", "news_type", "notice", "notice_statis",
-                                            "office", "sci", "supervisor"});
+                                            "news", "news_statis","notice", "notice_statis",
+                                            "office", "sci", "sci_stasis", "supervisor", "user"});
         strategy.setSuperServiceClass(null);
         strategy.setSuperServiceImplClass(null);
         strategy.setSuperMapperClass(null);
@@ -69,9 +69,9 @@ public class CodeGenerator {
         pc.setController("controller");
         pc.setService("service");
         pc.setServiceImpl("service.serviceImpl");
-        pc.setMapper("dao");
-        pc.setEntity("template.modal");
-        pc.setXml("template.mapping");
+        pc.setMapper("mapper");
+        pc.setEntity("modal");
+        pc.setXml("mapper.mapping");
         mpg.setPackageInfo(pc);
 
         // 执行生成

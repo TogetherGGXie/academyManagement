@@ -13,7 +13,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author XieZhiyang123
- * @since 2020-03-01
+ * @since 2020-03-24
  */
 @TableName("booking")
 public class Booking implements Serializable {
@@ -31,6 +31,11 @@ public class Booking implements Serializable {
     @TableField("room_id")
     private Integer roomId;
     /**
+     * 创建者id
+     */
+    @TableField("user_id")
+    private Integer userId;
+    /**
      * 开始时间
      */
     @TableField("start_time")
@@ -45,11 +50,6 @@ public class Booking implements Serializable {
      */
     @TableField("create_time")
     private Date createTime;
-    /**
-     * 创建者id
-     */
-    @TableField("created_by")
-    private Integer createdBy;
     /**
      * 状态
      */
@@ -70,6 +70,14 @@ public class Booking implements Serializable {
 
     public void setRoomId(Integer roomId) {
         this.roomId = roomId;
+    }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public Date getStartTime() {
@@ -96,14 +104,6 @@ public class Booking implements Serializable {
         this.createTime = createTime;
     }
 
-    public Integer getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(Integer createdBy) {
-        this.createdBy = createdBy;
-    }
-
     public Integer getStatus() {
         return status;
     }
@@ -117,10 +117,10 @@ public class Booking implements Serializable {
         return "Booking{" +
         ", meetingId=" + meetingId +
         ", roomId=" + roomId +
+        ", userId=" + userId +
         ", startTime=" + startTime +
         ", endTime=" + endTime +
         ", createTime=" + createTime +
-        ", createdBy=" + createdBy +
         ", status=" + status +
         "}";
     }

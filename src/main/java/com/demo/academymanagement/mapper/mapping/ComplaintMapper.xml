@@ -6,7 +6,6 @@
     <resultMap id="BaseResultMap" type="com.demo.academymanagement.modal.Complaint">
         <id column="complaint_id" property="complaintId" />
         <result column="user_id" property="userId" />
-        <result column="wx_user_id" property="wxUserId" />
         <result column="content" property="content" />
         <result column="type" property="type" />
         <result column="reply" property="reply" />

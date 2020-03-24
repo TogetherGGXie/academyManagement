@@ -5,7 +5,7 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.demo.academymanagement.modal.Appointment">
         <id column="appointment_id" property="appointmentId" />
-        <result column="user_info_id" property="userInfoId" />
+        <result column="sup_id" property="supId" />
         <result column="user_id" property="userId" />
         <result column="real_name" property="realName" />
         <result column="phone_num" property="phoneNum" />

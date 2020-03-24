@@ -4,7 +4,7 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.demo.academymanagement.modal.Supervisor">
-        <id column="id" property="id" />
+        <id column="sup_id" property="supId" />
         <result column="name" property="name" />
         <result column="type" property="type" />
         <result column="surname" property="surname" />

@@ -13,7 +13,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author XieZhiyang123
- * @since 2020-03-01
+ * @since 2020-03-24
  */
 @TableName("appointment")
 public class Appointment implements Serializable {
@@ -28,8 +28,8 @@ public class Appointment implements Serializable {
     /**
      * 被预约者用户编号
      */
-    @TableField("user_info_id")
-    private Integer userInfoId;
+    @TableField("sup_id")
+    private Integer supId;
     /**
      * 预约者用户编号
      */
@@ -51,7 +51,7 @@ public class Appointment implements Serializable {
     @TableField("create_time")
     private Date createTime;
     @TableField("order_time")
-    private String orderTime;
+    private Date orderTime;
     /**
      * 1：未处理   2：已处理
      */
@@ -66,12 +66,12 @@ public class Appointment implements Serializable {
         this.appointmentId = appointmentId;
     }
 
-    public Integer getUserInfoId() {
-        return userInfoId;
+    public Integer getSupId() {
+        return supId;
     }
 
-    public void setUserInfoId(Integer userInfoId) {
-        this.userInfoId = userInfoId;
+    public void setSupId(Integer supId) {
+        this.supId = supId;
     }
 
     public Integer getUserId() {
@@ -106,11 +106,11 @@ public class Appointment implements Serializable {
         this.createTime = createTime;
     }
 
-    public String getOrderTime() {
+    public Date getOrderTime() {
         return orderTime;
     }
 
-    public void setOrderTime(String orderTime) {
+    public void setOrderTime(Date orderTime) {
         this.orderTime = orderTime;
     }
 
@@ -126,7 +126,7 @@ public class Appointment implements Serializable {
     public String toString() {
         return "Appointment{" +
         ", appointmentId=" + appointmentId +
-        ", userInfoId=" + userInfoId +
+        ", supId=" + supId +
         ", userId=" + userId +
         ", realName=" + realName +
         ", phoneNum=" + phoneNum +

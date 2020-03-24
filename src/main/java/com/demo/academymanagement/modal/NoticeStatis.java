@@ -12,7 +12,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author XieZhiyang123
- * @since 2020-03-01
+ * @since 2020-03-24
  */
 @TableName("notice_statis")
 public class NoticeStatis implements Serializable {

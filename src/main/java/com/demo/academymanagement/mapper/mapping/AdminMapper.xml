@@ -12,8 +12,6 @@
         <result column="status" property="status" />
         <result column="create_time" property="createTime" />
         <result column="phone_num" property="phoneNum" />
-        <result column="receive_notice" property="receiveNotice" />
-        <result column="district" property="district" />
     </resultMap>
 
 </mapper>

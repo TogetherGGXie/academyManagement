@@ -6,7 +6,7 @@
     <resultMap id="BaseResultMap" type="com.demo.academymanagement.modal.Comment">
         <id column="comment_id" property="commentId" />
         <result column="comment_time_id" property="commentTimeId" />
-        <result column="user_info_id" property="userInfoId" />
+        <result column="sup_id" property="supId" />
         <result column="user_id" property="userId" />
         <result column="score" property="score" />
         <result column="content" property="content" />

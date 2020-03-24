@@ -1,6 +1,6 @@
 package com.demo.academymanagement.mapper;
 
-import com.demo.academymanagement.modal.Booking;
+import com.demo.academymanagement.modal.User;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  * @author XieZhiyang123
  * @since 2020-03-24
  */
-public interface BookingMapper extends BaseMapper<Booking> {
+public interface UserMapper extends BaseMapper<User> {
 
 }
