@@ -1,0 +1,79 @@
+/* pages/rddbllz/rddbllz.wxss */
+@import "../style/common.wxss";
+.page-container {
+  background-color: #f3f2f6;
+  background-image: url('https://st-file.yunban.cn/20180524/bg.png');
+  background-position: center bottom;
+  background-size: 100% auto;
+}
+.header {
+  width: 100%;
+}
+
+.header image {
+  width: 100%;
+  height: 300rpx;
+}
+
+.main {
+  width: 100%;
+  max-height: calc(100% - 310rpx);
+  padding: 10vw 4.5vw;
+}
+
+.main .one {
+  position: relative;
+  width: 43vw;
+  /* height: 208rpx;
+  overflow: hidden; */
+}
+
+.main .one .area-name {
+  position: absolute;
+  top: 66rpx;
+  left: 0;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #fff;
+}
+
+.main .one:nth-child(n+3) {
+  margin-top: 10rpx;
+}
+
+.main .one image {
+  width: 100%;
+  height: 208rpx;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+}
+
+.bottom .btn {
+  padding: 2vw 5vw;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+  background: linear-gradient(#fea695, #f96865);
+}
+
+.btn-record {
+  position: absolute;
+  bottom: 10vw;
+  right: 10rpx;
+  width: 100rpx;
+  height: 100rpx;
+  padding: 10rpx;
+  color: #fff;
+  font-size: 26rpx;
+  border-radius: 50%;
+  background: linear-gradient(#fea695, #f96865);
+}

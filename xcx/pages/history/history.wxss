@@ -1,0 +1,73 @@
+/* pages/history/history.wxss */
+page {
+  background: #e65740;
+}
+.page {
+  width: 94vw;
+  display: inline-block;
+  padding: 1vw 3vw;
+}
+.question {
+  color: #000;
+  font-size: 16px;
+  /* margin-left: 15vw; */
+  width: 70vw;
+  font-weight: 600;
+}
+.item {
+  position: relative;
+  width: 86vw;
+  padding: 4vw;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-bottom: 3vw;
+}
+.tab {
+  position: absolute;
+  right: 0px;
+  top: 4vw;
+  font-size: 15px;
+  /* border-radius: 0px 20px 20px 0px; */
+  border-radius: 20px 0px 0px 20px;
+  display: inline-block;
+  padding: 0.5vw 3vw;
+  color: #fff;
+}
+.yellow {
+  background: linear-gradient(rgb(255,221,101), rgb(255, 185, 76));
+}
+.blue {
+  background: linear-gradient(rgb(75,206,243), rgb(60, 181, 245));
+}
+.answer {
+  color: #f9766a;
+  font-size: 14px;
+  margin-top: 4vw;
+  overflow: hidden;
+  _zoom: 1;
+}
+.answer view {
+  float: right;
+  font-size:14px;
+  width:71vw;
+}
+.text-grey {
+  color: #8e8e8e;
+}
+.nothing {
+  position: absolute;
+  background-image: url(https://st-file.yunban.cn/20180524/nothing.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 170px;
+  height: 170px;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  margin: auto;
+}
+.hide {
+  display: none;
+}

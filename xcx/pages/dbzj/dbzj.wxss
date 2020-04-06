@@ -1,0 +1,101 @@
+/* pages/dbzj/dbzj.wxss */
+@import "../style/common.wxss";
+
+.page-container {
+  background-color: #f3f2f6;
+}
+
+.main .one {
+  width: 90vw;
+  padding: 40rpx 40rpx;
+  margin: 30rpx auto;
+  font-size: 30rpx;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.05);
+}
+
+.main .one:nth-child(1) {
+  margin-top: 0;
+}
+
+.main .one .one-info {
+  width: 100%;
+}
+
+.main .one .one-info:last-child {
+  margin-top: 8rpx;
+} 
+
+.main .one .icon {
+  width: 40rpx;
+  margin-left: 6rpx;
+  height: 37rpx;
+}
+
+.main .one .one-info:last-child .icon {
+  margin-top: 5rpx;
+}
+
+.main .one .label {
+  display: inline-block;
+  margin-left: 10rpx;
+  font-weight: 700;
+  color: #333;
+}
+
+.main .one .label text {
+  display: inline-block;
+  width: 4em;
+  text-align-last: justify;
+}
+
+.main .one .con {
+  width: calc(100% - 230rpx);
+  margin-left: 1em;
+  color: #666;
+}
+
+.main .one .name {
+  margin-bottom: 20rpx;
+  text-align: left;
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #333;
+}
+
+.header {
+  width: 100%;
+}
+
+.header image {
+  width: 100%;
+  height: 280rpx;
+}
+
+.main {
+  width: 100%;
+  /* height: calc(100vh - 290rpx); */
+}
+
+.type-box {
+  width: 100%;
+  padding: 20rpx 8vw;
+  font-size: 32rpx;
+}
+
+.type-box .one {
+  width: 180rpx;
+  padding: 10rpx 0;
+  color: #f96f69;
+  font-size: 28rpx;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #fff;
+}
+
+.type-box .one.checked {
+  color: #fff;
+  background-color: #f96f69;
+}
+

@@ -1,0 +1,114 @@
+/* pages/yjt/yjt.wxss */
+page {
+  background: #e65740;
+}
+.page {
+  width: 94vw;
+  display: inline-block;
+  padding: 1vw 3vw;
+}
+.choose {
+  position: relative;
+  width: 82vw;
+  padding: 4vw 6vw;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.choose .title-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.choose .title-box image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.choose .title-box text {
+  margin-left: 20rpx;
+  font-size: 38rpx;
+  font-weight: 700;
+}
+.radio {
+  position: relative;
+  border: 1px solid #b8b8b8;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+text {
+  font-size: 16px;
+  color: #000;
+  margin-left: 4px;
+  font-weight: 600;
+}
+.choosed,.no {
+  display: inline-block;
+  margin-right: 8vw;
+}
+.choosed .radio {
+  border: 1px solid #f96664;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.choosed .radio:after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #f96664;
+  top: 2px;
+  left: 2px;
+}
+.lian-left {
+  position: absolute;
+  width: 3vw;
+  height: 9.94vw;
+  left: 3vw;
+  bottom: -6vw;
+  z-index: 2;
+}
+.lian-right {
+  position: absolute;
+  width: 3vw;
+  height: 9.94vw;
+  right: 3vw;
+  bottom: -6vw;
+  z-index: 2;
+}
+.content {
+  position: relative;
+  width: 82vw;
+  padding: 6vw;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-top: 2vw;
+  font-size: 15px;
+}
+textarea {
+  width: 82vw;
+  min-height: 64vh;
+}
+.btn {
+  position: relative;
+  background: linear-gradient(rgb(250, 130, 110), rgb(249,102,100));
+  color: #fff;
+  font-size: 15px;
+  border-radius: 20px;
+  padding: 2vw 15vw 2.5vw 15vw;
+  display: inline-block;
+}
+.text-center {
+  text-align: center;
+}
+.history {
+  color: #f9766a;
+  font-size: 14px;
+  margin-top: 10px;
+}

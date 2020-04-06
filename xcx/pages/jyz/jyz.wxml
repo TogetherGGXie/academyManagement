@@ -1,0 +1,16 @@
+<!--pages/jyz/jyz.wxml-->
+<view class="page">
+  <scroll-view scroll-y style="height: {{height}}px;" bindscrolltolower="lower" scroll-top="{{scrollTop}}">
+    <view class="item" wx:for="{{list}}" wx:for-index="idx" wx:for-item="itemName" data-id="{{itemName.systemId}}" bindtap='turnTo'>
+      <view class="book">
+        <view class="book-image" style="background-image:url('https://st-file.yunban.cn/20180524/book.png')"></view>
+      </view>
+      <view class="title">{{itemName.title}}</view>
+      <view wx:if="{{itemName.imageUrl}}" class="itemNameImg" style="background-image:url({{itemName.imageUrl}})"></view>
+      <view wx:else class="itemNameImg" style="background-image:url(https://st-img.yunban.cn/uploads/rddb_xcx/18-11/5f9ebd6cc79fa2fd0017c155246b93f3_small.png)"></view>
+      <!-- <view class="read-view">阅读：{{itemName.pageView}}</view> -->
+      <view class="read-view">{{itemName.time}}</view>
+    </view>
+  </scroll-view>
+  <view class="nothing {{nothing?'hide':''}}"></view>
+</view>

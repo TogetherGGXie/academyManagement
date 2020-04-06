@@ -1,5 +1,5 @@
 server:
-  port: 8000
+  port: 8999
 spring:
   profiles:
     active: dev
@@ -16,7 +16,8 @@ spring:
 mybatis-plus:
   mapper-locations: classpath:com/demo/academymanagement/mapper/mapping/*.xml
   typeAliasesPackage: com.demo.academymanagement.modal
-  map-underscore-to-camel-case : true
+  configuration:
+    map-underscore-to-camel-case: true
 #  servlet:
 #    multipart:
 #      # 文件传输大小最大值设置

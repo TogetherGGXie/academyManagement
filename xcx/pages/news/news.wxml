@@ -1,0 +1,19 @@
+<!--pages/gzyw/gzyw.wxml-->
+<view class="page">
+  <view class="tabs">
+    <view wx:for="{{text}}" wx:for-index="idx" wx:for-item="itemName" class="tab {{index == idx?'choose':''}}" data-id="{{idx}}" bindtap='choose'>{{itemName}}</view>
+  </view>
+  <scroll-view scroll-y style="height: {{height}}px;" bindscrolltolower="lower">
+    <view class="news" wx:for="{{list}}" wx:for-index="idx" wx:for-item="itemName" data-id="{{itemName.newsId}}" bindtap='turnTo'>
+      <view class="new-image" style="background-image:url({{itemName.newsImage}})"></view>
+      <view class='content'>{{itemName.newsTitle}}</view>
+      <view class="relative">
+        <text class="grey-text">{{itemName.newsTime}}</text>
+        <!-- <view class="read-view">阅读：{{itemName.pageView}}</view> -->
+      </view>
+      <image class="lian-left" src="https://st-file.yunban.cn/20180524/lian.png"></image>
+      <image class="lian-right" src="https://st-file.yunban.cn/20180524/lian.png"></image>
+    </view>
+  </scroll-view>
+  <view class="nothing {{nothing?'hide':''}}"></view>
+</view>

@@ -1,0 +1,359 @@
+/* pages/home/home.wxss */
+/* @import "../style/common.wxss"; */
+
+.page {
+  min-height: 100vh;
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #f3f3f3;
+}
+swiper {
+  height: 180px;
+}
+.swiper {
+  width: 100%;
+  height: 120vw;
+}
+.logo {
+  background-color: #fff;
+}
+.logo image {
+  width: 40vw;
+  height: 5.665vw;
+  margin: 2vw 4vw;
+}
+.slide {
+  width: 100%;
+  height: 180px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.wx-swiper-dot.wx-swiper-dot-active {
+  background-color: #fff;
+}
+.all {
+  padding: 3vw 5vw;
+  position: relative;
+}
+.item {
+  position: relative;
+  background-color: #fff;
+  padding: 1vw 6vw 0vw 6vw;
+  display: inline-block;
+  margin: 1vw;
+}
+.long {
+  background-color: #fff;
+  display: inline-block;
+  padding: 2vw 6vw 0vw 2vw;
+  margin: 1vw;
+}
+.item .icon {
+  width: 16vw;
+  height: 27vw;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.long .icon {
+  width: 35vw;
+  height: 17vw;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.suo {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  width: 14px;
+  height: 20px;
+  background-image:url('https://st-file.yunban.cn/20180524/suo.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+button {
+  background-color: #fff;
+  display:-webkit-box;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:0px;
+  padding-right:0px;
+  line-height:inherit;
+  font-size: 10px;
+}
+button:after {
+  border: none;
+}
+
+#homePage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #f9f2ec;
+  background-position: center top;
+  background-size: 100% auto;
+}
+
+#homePage .bottom-bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#homePage .top-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+#homePage .h-logo {
+  position: absolute;
+  top: 20vw;
+  left: 35vw;
+  width: 30vw;
+}
+
+#homePage .title {
+  position: absolute;
+  top: 73vw;
+  left: 20vw;
+  width: 60vw;
+}
+
+#homePage .title2 {
+  position: absolute;
+  top: 74.2vw;
+  left: 20vw;
+  width: 63vw;
+  height: 100rpx;
+  /* background-position: left top;
+  background-size: 63vw auto;
+  animation: title-ani 2s linear; */
+}
+
+#homePage .title2 .one {
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  width: 0;
+  height: 100rpx;
+  background-position: left top;
+  background-size: 63vw auto;
+  background-repeat: no-repeat;
+  animation: title-ani 2s linear .5s;
+  animation-fill-mode: forwards;
+}
+
+#homePage .title2 .one:nth-child(1) {
+  left: 0;
+  background-position: 0  top;
+}
+
+#homePage .title2 .one:nth-child(2) {
+  left: 25%;
+  background-position: -15.75vw  top;
+}
+
+#homePage .title2 .one:nth-child(3) {
+  left: 50%;
+  background-position: -31.5vw  top;
+}
+
+#homePage .title2 .one:nth-child(4) {
+  left: 75%;
+  background-position: -47.25vw  top;
+}
+
+@keyframes title-ani {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 25%;
+  }
+}
+
+#homePage .bird1 {
+  position: absolute;
+  top: 80vw;
+  right: 27vw;
+  width: 13vw;
+  animation: bird-fly 8s linear infinite;
+}
+
+#homePage .bird2 {
+  position: absolute;
+  top: 82vw;
+  right: 4vw;
+  width: 10vw;
+  animation: bird-fly 8s linear infinite;
+}
+
+#homePage .bird3 {
+  position: absolute;
+  top: 97vw;
+  right: 12vw;
+  width: 10vw;
+  animation: bird-fly 8s linear infinite;
+}
+
+#homePage .bird4 {
+  position: absolute;
+  top: 105vw;
+  right: 28vw;
+  width: 8vw;
+  animation: bird-fly 8s linear infinite;
+}
+
+@keyframes bird-fly {
+  0% {
+    transform: translate3d(30vw, 0, 0) scale(1);
+  }
+
+  20% {
+    transform: translate3d(4vw, 10vw, 0) scale(1.2);
+  }
+
+  40% {
+    transform: translate3d(-22vw, 0vw, 0) scale(.6);
+  }
+
+  60% {
+    transform: translate3d(-48vw, -10vw, 0) scale(1.2);
+  }
+
+  80% {
+    transform: translate3d(-74vw, 10vw, 0) scale(.6);
+  }
+
+  100% {
+    transform: translate3d(-100vw, 0, 0) scale(1);
+  }
+}
+
+@keyframes bird-fly2 {
+  0% {
+    transform: translate3d(30vw, 0, 0) scale(1);
+  }
+
+  20% {
+    transform: translate3d(4vw, 15vw, 0) scale(1.2);
+  }
+
+  40% {
+    transform: translate3d(-22vw, 0vw, 0) scale(.6);
+  }
+
+  60% {
+    transform: translate3d(-48vw, -15vw, 0) scale(1.2);
+  }
+
+  80% {
+    transform: translate3d(-74vw, 15vw, 0) scale(.6);
+  }
+
+  100% {
+    transform: translate3d(-100vw, 0, 0) scale(1);
+  }
+}
+
+#homePage .stars {
+  position: absolute;
+  bottom: 17vw;
+  left: 4vw;
+  width: 30vw;
+  animation: star-flash 1s linear infinite;
+}
+
+@keyframes star-flash {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#homePage .star-box {
+  position: absolute;
+  bottom: calc(17vw + 84rpx);
+  left: 4vw;
+  width: 30vw;
+}
+
+#homePage .star-box image:nth-child(1) {
+  position: absolute;
+  top: 30rpx;
+  left: 0;
+  width: 20rpx;
+  animation: star-flash 1s linear infinite;
+}
+
+#homePage .star-box image:nth-child(2) {
+  position: absolute;
+  top: 48rpx;
+  left: 4%;
+  width: 26rpx;
+  animation: star-flash 1s linear infinite .2s;
+}
+
+#homePage .star-box image:nth-child(3) {
+  position: absolute;
+  top: 59rpx;
+  left: 17%;
+  width: 32rpx;
+  animation: star-flash 1s linear infinite .4s;
+}
+
+#homePage .star-box image:nth-child(4) {
+  position: absolute;
+  top: 40rpx;
+  left: 34%;
+  width: 54rpx;
+  animation: star-flash 1s linear infinite;
+}
+
+#homePage .star-box image:nth-child(5) {
+  position: absolute;
+  top: 3rpx;
+  left: 61%;
+  width: 86rpx;
+  animation: star-flash 1s linear infinite .2s;
+}
+
+.new-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50rpx;
+}
+
+.item-new {
+  margin: 0 1vw -2rpx;
+  padding:0;
+  width: 43vw;
+  height:155rpx;
+  overflow:hidden;
+  position:relative;
+  box-sizing:border-box;
+  background-size: 100% 100%;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+

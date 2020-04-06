@@ -1,0 +1,81 @@
+<!--pages/dbxx-detail/dbxx-detail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="page {{close?'':'overflow-hide'}}">
+  <view class="top">
+    <view class="head-image"  style="background-image: url({{headImage}})"></view>
+    <view class="text">
+      <view class="name">{{name}}</view>
+      <!-- <view class="level">{{position == null?'':position}}</view> -->
+    </view>
+    <view class="btn" bindtap='modalShow'>约见代表</view>
+    <image class="lian-left" src="https://st-file.yunban.cn/20180524/lian.png"></image>
+    <image class="lian-right" src="https://st-file.yunban.cn/20180524/lian.png"></image>
+  </view>
+  <view class="content">
+    <view class="unit">
+      <view class="icon" style="background-image: url(https://st-file.yunban.cn/20180524/build.png)"></view>
+      <text decode="{{true}}" class="label">单位名称</text>
+      <view class="float-right">
+        <view class="grey-text">{{unit != null?unit:'无'}}</view>
+      </view>
+    </view>
+    <view class="unit">
+      <view class="icon" style="background-image: url(https://st-file.yunban.cn/20180524/address.png)"></view>
+      <text decode="{{true}}" class="label">单位地址</text>
+      <view class="float-right">
+        <view class="grey-text">{{address != null?address:'无' }}</view>
+      </view>
+    </view>
+    <view class="unit">
+      <view class="icon" style="background-image: url(https://st-file.yunban.cn/20180524/phone.png)"></view>
+      <text decode="{{true}}" class="label">联系电话</text>
+      <view class="float-right">
+        <view class="grey-text" data-reply-phone="{{phone}}" bindtap="phoneCall">{{phone != null?phone:'无'}}</view>
+      </view>
+    </view>
+    <view class="unit">
+      <view class="icon" style="background-image: url(http://shzj.h5yunban.com//uploadsoss/rddb_xcx/2019-11-19/45c1f7b74ce8a77450be4b7fb9a382c0.png)"></view>
+      <text decode="{{true}}" class="label">邮&emsp;&emsp;箱</text>
+      <view class="float-right">
+        <view class="grey-text" >暂无</view>
+      </view>
+    </view>
+    <view class="unit">
+      <view class="icon" style="background-image: url(https://st-file.yunban.cn/20180524/job.png)"></view>
+      <text decode="{{true}}" class="label">职&emsp;&emsp;务</text>
+      <view class="float-right">
+        <view class="grey-text">{{level != null?level:'无'}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="bg {{close?'hide':''}}{{success?'hide':''}}"></view>
+  <view class="frame {{close?'hide':''}}">
+    <view class="item {{id == 1?'focus':''}}">
+      <view class="label">姓名</view>
+      <input placeholder='请输入您的姓名' data-id="1" bindfocus="bindfocus" bindinput="bindName" focus="{{focus1}}"/>
+    </view>
+    <view class="item {{id == 2?'focus':''}}">
+      <view class="label">手机号</view>
+      <input type="number" placeholder='请输入您的手机号' data-id="2" bindfocus="bindfocus" bindinput="bindPhone" focus="{{focus2}}"/>
+    </view>
+    <view class="item {{id == 3?'focus':''}}">
+      <view class="label">验证码</view>
+      <input type="number" class="code-input" placeholder='请输入验证码' data-id="3" bindfocus="bindfocus" bindinput="bindCode" focus="{{focus3}}"/>
+      <view class="code {{code && time == 0?'show':''}}" bindtap='getCode'>{{time == 0?'获取验证码':time +'s后重新发送'}}</view>
+    </view>
+    <view class="text-center">
+      <view class="submit" bindtap='submit'>
+        提交
+      </view>
+    </view>
+    <view class="close" bindtap='close'></view>
+  </view>
+  <view class="success {{success?'':'hide'}}">
+    <view class="success-image"></view>
+    <!-- <view>{{name}}在{{address}}等你!</view> -->
+    <view>您的申请已受理，我们将根据代表时间合理安排您的约见，谢谢！</view>
+    <view class="text-center">
+      <view class="submit" bindtap='know'>知道了</view>
+    </view>
+  </view>
+</view>

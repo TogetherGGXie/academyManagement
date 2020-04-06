@@ -1,0 +1,106 @@
+/* pages/dbhd-detail/dbhd-detail.wxss */
+page {
+  background: #e65740;
+}
+.page {
+  width: 94vw;
+  display: inline-block;
+  padding: 1vw 3vw;
+}
+.top {
+  position: relative;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 3vw 3vw 5vw 3vw;
+}
+.head-image {
+  width: 21vw;
+  height: 27vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  margin-right: 3vw;
+}
+.name {
+  display: inline-block;
+  color: #000;
+  font-size: 15px;
+}
+.level {
+  font-size: 13px;
+  color: #aaa6a6;
+}
+.lian-left {
+  position: absolute;
+  width: 3vw;
+  height: 9.94vw;
+  left: 3vw;
+  bottom: -6vw;
+  z-index: 2;
+}
+.lian-right {
+  position: absolute;
+  width: 3vw;
+  height: 9.94vw;
+  right: 3vw;
+  bottom: -6vw;
+  z-index: 2;
+}
+.btn {
+  background: linear-gradient(rgb(249,102,100), rgb(250, 130, 110));
+  color: #fff;
+  font-size: 12px;
+  border-radius: 20px;
+  padding: 0.5vw 2vw;
+  bottom: 5vw;
+  right: 4vw;
+  text-align: center;
+  margin-top: 2vw;
+  display: inline-block;
+  margin-right: 3vw;
+}
+.text {
+  display: inline-block;
+  position: absolute;
+}
+.content {
+  padding: 6vw 4vw 2vw 4vw;
+  width: 86vw;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-top: 2vw;
+  font-size: 14px;
+}
+.icon {
+  position: relative;
+  height: 16px;
+  width: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  margin-right: 2vw;
+  top: 0.5vw;
+}
+.grey-text {
+  color: #7e7e7e;
+}
+.label {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1px;
+  margin-right: 3vw;
+}
+.unit {
+  position: relative;
+  margin-bottom: 3vw;
+  overflow: hidden;
+  _zoom: 1;
+}
+.float-right {
+  width: 58vw;
+  float: right;
+  right: 0px;
+  top: 0px;
+}

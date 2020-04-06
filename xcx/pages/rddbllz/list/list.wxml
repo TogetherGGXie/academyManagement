@@ -1,0 +1,20 @@
+<!--pages/rddbllz/list/list.wxml-->
+<view class="page" hidden="{{!pageShow}}">
+  <scroll-view id="listPage" class="page-container" scroll-y bindscrolltolower="scrollBottom">
+    <view class="one flex-row" wx:for="{{peoples}}" wx:key="{{item.id}}" bindtap="turnTo" data-url="../detail/detail?item={{item.item}}"> 
+      <image class="head-img left" mode="aspectFill" src="{{item.image}}"></image>
+      <view class="right">
+        <text class="name">{{item.realName}}</text>
+        <view class="flex-row desc-box">
+          <image mode="widthFix" class="fire" src="https://st-file.yunban.cn/20180524/fire.png"></image>
+          <text class="desc">已被{{item.orderNum}}人约见</text>
+        </view>
+        <view class="btn-box flex-row">
+          <view class="btn {{showCommentBtn && !item.comment ? '':'btn-disabled'}}" catchtap="{{showCommentBtn && !item.comment ? '':'noTurnTo'}}" data-url="../detail/detail?item={{item.item}}">评议</view>
+          <view class="btn">约见</view>
+        </view>
+      </view>
+    </view>
+    <view class="list-null" wx:if="{{peoples.length <= 0}}" style="color: #fff;">暂无代表~</view>
+  </scroll-view>
+</view>

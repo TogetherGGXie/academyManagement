@@ -1,0 +1,18 @@
+<!--pages/zhlj/zhlj.wxml-->
+<view class="page">
+  <view class="top" id="mjltest">
+    <image class="text1" src="https://st-file.yunban.cn/20180524/text4.png"></image>
+    <image class="house" src="https://st-file.yunban.cn/20180524/light.png"></image>
+    <view class="grey-text">介绍张江镇“人大代表之家”的相关建设， 制度等内容，方便选民了解内容</view>
+    <image class="lian-left" src="https://st-file.yunban.cn/20180524/lian.png"></image>
+    <image class="lian-right" src="https://st-file.yunban.cn/20180524/lian.png"></image>
+  </view>
+  <view class="development">
+    <scroll-view scroll-y style="height: {{height}}px;" bindscrolltolower="lower">
+      <view class="icon-view" wx:for="{{list}}" wx:for-index="idx" wx:for-item="itemName" data-url="{{itemName.mpUrl}}" data-mpid="{{itemName.mpId}}" bindtap='turnTo'>
+        <view class="icon" style="background-image: url({{itemName.mpImage}})"></view>
+        <view class="text">{{itemName.mpName}}</view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

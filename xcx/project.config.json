@@ -1,0 +1,108 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.1.1",
+	"appid": "wxb7797effd51eea44",
+	"projectname": "academy",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "代表之家",
+					"pathName": "pages/dbzj/dbzj",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "人大代表联络站-list",
+					"pathName": "pages/rddbllz/list/list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "人大代表联络站-detail",
+					"pathName": "pages/rddbllz/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "人大代表联络站-五大选区",
+					"pathName": "pages/rddbllz/rddbllz",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "人大代表联络站-约见记录",
+					"pathName": "pages/rddbllz/record/record",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "一键通-精彩问答",
+					"pathName": "pages/yjt/jcwd/jcwd",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "pages/home/init/init",
+					"pathName": "pages/home/init/init",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "联络站中间页-小选区",
+					"pathName": "pages/rddbllz/small-areas/small-areas",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

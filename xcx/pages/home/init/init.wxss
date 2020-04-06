@@ -1,0 +1,208 @@
+/* pages/home/init/init.wxss */
+@import "../../style/common.wxss";
+
+#homePage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-position: center top;
+  background-size: cover;
+}
+
+#homePage .logo {
+  position: absolute;
+  top: 20vw;
+  left: 35vw;
+  width: 30vw;
+}
+
+#homePage .title {
+  position: absolute;
+  top: 55vw;
+  left: 20vw;
+  width: 60vw;
+}
+
+#homePage .title2 {
+  position: absolute;
+  top: 56.2vw;
+  left: 20vw;
+  width: 63vw;
+  height: 100rpx;
+  /* background-position: left top;
+  background-size: 63vw auto;
+  animation: title-ani 2s linear; */
+}
+
+#homePage .title2 .one {
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  width: 0;
+  height: 100rpx;
+  background-position: left top;
+  background-size: 63vw auto;
+  animation: title-ani 2s linear .5s;
+  animation-fill-mode: forwards;
+}
+
+#homePage .title2 .one:nth-child(1) {
+  left: 0;
+  background-position: 0  top;
+}
+
+#homePage .title2 .one:nth-child(2) {
+  left: 25%;
+  background-position: -15.75vw  top;
+}
+
+#homePage .title2 .one:nth-child(3) {
+  left: 50%;
+  background-position: -31.5vw  top;
+}
+
+#homePage .title2 .one:nth-child(4) {
+  left: 75%;
+  background-position: -47.25vw  top;
+}
+
+@keyframes title-ani {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 25%;
+  }
+}
+
+#homePage .bird1 {
+  position: absolute;
+  top: 75vw;
+  right: 27vw;
+  width: 13vw;
+  animation: bird-fly 8s linear infinite;
+}
+
+#homePage .bird2 {
+  position: absolute;
+  top: 77vw;
+  right: 4vw;
+  width: 10vw;
+  animation: bird-fly 8s linear infinite;
+}
+
+#homePage .bird3 {
+  position: absolute;
+  top: 92vw;
+  right: 12vw;
+  width: 10vw;
+  animation: bird-fly 8s linear infinite;
+}
+
+#homePage .bird4 {
+  position: absolute;
+  top: 100vw;
+  right: 28vw;
+  width: 8vw;
+  animation: bird-fly 8s linear infinite;
+}
+
+@keyframes bird-fly {
+  0% {
+    transform: translate3d(30vw, 0, 0) scale(1);
+  }
+
+  20% {
+    transform: translate3d(4vw, 10vw, 0) scale(1.2);
+  }
+
+  40% {
+    transform: translate3d(-22vw, 0vw, 0) scale(.6);
+  }
+
+  60% {
+    transform: translate3d(-48vw, -10vw, 0) scale(1.2);
+  }
+
+  80% {
+    transform: translate3d(-74vw, 10vw, 0) scale(.6);
+  }
+
+  100% {
+    transform: translate3d(-100vw, 0, 0) scale(1);
+  }
+}
+
+#homePage .stars {
+  position: absolute;
+  bottom: 17vw;
+  left: 4vw;
+  width: 30vw;
+  animation: star-flash 1s linear infinite;
+}
+
+@keyframes star-flash {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#homePage .star-box {
+  position: absolute;
+  bottom: calc(17vw + 84rpx);
+  left: 4vw;
+  width: 30vw;
+}
+
+#homePage .star-box image:nth-child(1) {
+  position: absolute;
+  top: 30rpx;
+  left: 0;
+  width: 20rpx;
+  animation: star-flash 1s linear infinite;
+}
+
+#homePage .star-box image:nth-child(2) {
+  position: absolute;
+  top: 48rpx;
+  left: 4%;
+  width: 26rpx;
+  animation: star-flash 1s linear infinite .2s;
+}
+
+#homePage .star-box image:nth-child(3) {
+  position: absolute;
+  top: 59rpx;
+  left: 17%;
+  width: 32rpx;
+  animation: star-flash 1s linear infinite .4s;
+}
+
+#homePage .star-box image:nth-child(4) {
+  position: absolute;
+  top: 40rpx;
+  left: 34%;
+  width: 54rpx;
+  animation: star-flash 1s linear infinite;
+}
+
+#homePage .star-box image:nth-child(5) {
+  position: absolute;
+  top: 3rpx;
+  left: 61%;
+  width: 86rpx;
+  animation: star-flash 1s linear infinite .2s;
+}
+
+

@@ -1,0 +1,34 @@
+<view class="page">
+  <view class="frame" style="height:{{height}}px;">
+    <scroll-view scroll-y style="height:{{height}}px;" scroll-top="{{scrollTop}}" upper-threshold="{{scrollTop}}" bindscrolltoupper="upper" bindscrolltolower="scrolltolower">
+      <view id="page">
+        <view class="item {{itemName.isMine?'right':'left'}}" wx:for="{{chatItems}}" wx:for-index="idx" wx:for-item="itemName">
+          <view class="headimage headimage1" wx:if="{{itemName.headImage}}" style="background-image:url({{itemName.headImage}})"></view>
+          <view class="headimage headimage2" wx:elif="{{itemName.headImage == null || itemName.headImage == 'null'}}" style="background-image:url({{headImage}})"></view>
+
+          <view class="name">{{itemName.userName}}</view>
+          <view class="message" wx:if="{{itemName.messageType == '1'}}">{{itemName.message}}</view>
+          <view class="message" wx:elif="{{itemName.messageType == '2'}}">
+            <image src="{{itemName.message}}" data-url="{{itemName.message}}" bindload="imageLoad" bindtap='previewImage' style="width:{{imgwidth}}rpx; height:{{imgheight }}rpx;"></image>
+          </view>
+          <view class="message" wx:elif="{{itemName.messageType == '3'}}" data-message="{{itemName.message}}" bindtap='play'>
+            <view class="{{itemName.isMine?'image-voice-right':'image-voice-left'}}" style="background-image:url(https://st-file.yunban.cn/20180524/image-voice.png)"></view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="chat">
+    <view class="btn {{voice?'hide':''}}" style="background-image:url(https://st-file.yunban.cn/20180524/voice.png)" bindtap='turn'></view>
+    <view class="btn {{voice?'':'hide'}}" style="background-image:url(https://st-file.yunban.cn/20180524/keyboard.png)" bindtap='turn'></view>
+    <input class="content {{voice?'hide':''}}" placeholder='请在此输入...' confirm-type="发送" bindconfirm="send" bindinput='bindinput' value="{{value}}"/>
+    <view class="press {{touchStart?'grey':''}}{{voice?'':'hide'}}" bindtouchstart="touchStart" bindtouchend="touchEnd">按住 说话</view>
+    <view class="btn add" style="background-image:url(https://st-file.yunban.cn/20180524/extra.png)" bindtap='uploadImage'></view>
+  </view>
+  <view class="ing {{touchStart?'':'hide'}}">
+    <image src="https://st-file.yunban.cn/20180524/speak.png"></image>
+    <view class="text">正在录音...</view>
+  </view>
+</view>
+
+

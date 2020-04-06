@@ -1,0 +1,103 @@
+/* pages/rddbllz/list/list.wxss */
+html, body, page, div, span, p, img, ul, li, a, view, text, scroll-view, web-view, swiper, icon, rich-text, progress, button, checkbox, form, input, label, picker, picker-view, radio, slider, switch, textarea, navigator, audio, image, video, camera, live-player, live-pusher, map, canvas, ad {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  list-style: none;
+  border: none;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family: "PingFang SC", "Microsoft YaHei";
+}
+image {
+  vertical-align: middle;
+}
+html, body, #app, .page, page {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+html {
+  font-size: 16px;
+}
+input {
+  outline: none;
+}
+img[src=""] {
+  display: none;
+}
+img:not([src]) {
+  display: none;
+}
+
+.page-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #e65740;
+}
+
+.scroll-container {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.list-null {
+  width: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.btn-main {
+  text-align: center;
+  background: linear-gradient(rgb(249,102,100), rgb(250, 130, 110));
+}
+
+.btn-disabled {
+  color: #666!important;
+  background: #eee!important;
+}
+
+.flex-row-start-center {
+  display: flex;
+  align-items: center;
+}
+.flex-row {
+  display: flex;
+}
+
+.flex-row-center-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col-center-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col-start-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-row-between-start {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.flex-row-between-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

@@ -1,0 +1,30 @@
+<!--pages/yjt/yjt.wxml-->
+<view class="page">
+  <view class="choose">
+    <view class='title-box'>
+      <image mode="widthFix" src="/pages/images/wd_icon_title.png"></image>
+       <text>提问</text>
+    </view>
+    <!-- <view class="{{id == 1?'choosed':'no'}}" data-id="1" bindtap="choose">
+      <view class="radio"></view>
+      <text>投诉</text>
+    </view>
+    <view class="{{id == 2?'choosed':'no'}}" data-id="2" bindtap="choose">
+      <view class="radio"></view>
+      <text>建议</text>
+    </view> -->
+    <image class="lian-left" src="https://st-file.yunban.cn/20180524/lian.png"></image>
+    <image class="lian-right" src="https://st-file.yunban.cn/20180524/lian.png"></image>
+  </view>
+  <view class="content">
+    <textarea placeholder='请输入您的问题' bindinput='bindInput' value="{{content}}" focus="{{focus}}"></textarea>
+    <view class="text-center">
+      <view class="btn" bindtap='saveData'>
+        提交
+      </view>
+      <!-- <navigator url='../history/history' hover-class='none'>
+        <view class="history">历史记录</view>
+      </navigator> -->
+    </view>
+  </view>
+</view>

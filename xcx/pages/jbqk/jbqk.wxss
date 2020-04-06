@@ -1,0 +1,122 @@
+/* pages/jbqk/jbqk.wxss */
+@import "../../wxParse/wxParse.wxss";
+page {
+  background: #e65740;
+}
+.page {
+  width: 94vw;
+  display: inline-block;
+  padding: 1vw 3vw;
+}
+.top {
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 4vw 4vw 4vw 6vw;
+  width: 84vw;
+}
+.tabs {
+  width: 94vw;
+  display: inline-block;
+  overflow: hidden;
+  _zoom: 1;
+}
+.tab {
+  position: relative;
+  padding: 12px 2vw;
+  color: #fff;
+  font-size: 14px;
+  background-color: #c64b37;
+  border-radius: 2vw;
+  margin: 1vw 1vw 2vw 1vw;
+  width: 25vw;
+  float: left;
+  text-align: center;
+}
+.tab.choose {
+  color: #e65740;
+  background-color: #fff;
+}
+.choose:after {
+  position: absolute;
+  content: '';
+  right: 21vw;
+  bottom: -2.4vw;
+  width: 0;
+  height: 0;
+  border-left: 1.2vw solid transparent;
+  border-right: 1.2vw solid transparent;
+  border-top: 2.4vw solid #fff;
+  z-index: 5;
+}
+.text1 {
+  width: 20vw;
+  height: 4.93vw;
+}
+.grey-text {
+  color: #999999;
+  font-size: 12px;
+}
+.house {
+  width: 25vw;
+  height: 18.422vw;
+  float: right;
+}
+.lian-left {
+  position: absolute;
+  width: 3vw;
+  height: 9.94vw;
+  left: 3vw;
+  bottom: -6vw;
+  z-index: 2;
+}
+.lian-right {
+  position: absolute;
+  width: 3vw;
+  height: 9.94vw;
+  right: 3vw;
+  bottom: -6vw;
+  z-index: 2;
+}
+.development {
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 4vw;
+  width: 86vw;
+  margin-top: 2vw;
+  font-size: 14px;
+}
+.text-center {
+  text-align: center;
+}
+.text2 {
+  height: 5vw;
+  width: 24.7vw;
+  display: inline-block;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  margin-bottom: 2vw;
+}
+.content {
+  font-size: 14px;
+  text-align: justify;
+}
+.img {
+  width: 86vw;
+  height: 43vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 4vw 0px 2vw 0px;
+}
+.line {
+  background-color: #eaeaea;
+  height: 5px;
+  width: 94vw;
+  margin: 3vw auto;
+  margin-left: -4vw;
+}

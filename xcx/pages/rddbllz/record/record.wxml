@@ -1,0 +1,45 @@
+<!--pages/rddbllz/record/record.wxml-->
+<view class="page">
+  <view id="recordPage" class="page-container">
+    <image class="title-img" mode="widthFix" src="/pages/images/title_order_record.png"></image>
+    <view class="btn-back flex-row-center-center" bindtap="turnBack">返回</view>
+    <scroll-view scroll-y bindscrolltolower="scrollBottom" class="main" wx:if="{{pageReady}}">
+      <block wx:for="{{peoples}}" wx:key="{{index}}" wx:if="{{peoples && peoples.length > 0}}">
+        <view class="one">
+          <image class="head-img" mode="aspectFill" src="{{item.userInfo.image}}"></image>
+          <text class="name">{{item.userInfo.realName}}</text>
+          <text class="time" wx:if="{{item.orderTime !== '待约见' && item.orderTime !== '已取消'}}"></text>
+          <text class="time" wx:else>{{item.orderTime}}</text>
+          <text class="tip" wx:if="{{item.orderTime === '待约见'}}">您的约见正在处理中，请耐心等待</text>
+          <text class="tip" wx:if="{{item.orderTime !== '待约见' && item.orderTime !== '已取消'}}">约见时间：{{item.orderTime}}</text>
+          <view class="btn-box">
+            <view class="btn {{item.canComment ? '':'btn-disabled'}}" bindtap="{{item.canComment ? 'toComment':''}}" data-index="{{index}}" wx:if="{{!item.comment}}">评价</view>
+            <view class="btn" bindtap="lookOneComment" data-index="{{index}}" wx:if="{{item.comment}}">查看评价</view>
+          </view>
+        </view>
+      </block>
+      <view class="list-null" wx:if="{{peoples.length <= 0}}">空空如也~</view>
+    </scroll-view >
+  </view>
+  <!-- 评价页 -->
+  <view id="commentPage" class="page-container flex-row-center-center flex-row-start" wx:if="{{showCommentPage}}">
+    <view class="main">
+      <image class="title-circle" mode="aspectFill" src="{{selectedPeopleInfo.userInfo.image}}"></image>
+      <text class="name">{{selectedPeopleInfo.userInfo.realName}}</text>
+      <text class="desc1">您的建议让我们做的更好</text>
+      <view class="desc2" hidden="{{!showCommentBtn}}">请对约谈或提问情况进行评价并选填写理由</view>
+      <!-- <text class="desc2">请对该人大代表进行评价</text> -->
+      <view class="star-box flex-row-between-center">
+        <view class="one flex-row-center-center {{commentDegree === '不满意' ? 'selected':''}}" bindtap="{{showCommentBtn ? 'selectComment':''}}" data-value="不满意">不满意</view>
+        <view class="one flex-row-center-center {{commentDegree === '较满意' ? 'selected':''}}" bindtap="{{showCommentBtn ? 'selectComment':''}}" data-value="较满意">较满意</view>
+        <view class="one flex-row-center-center {{commentDegree === '满意' ? 'selected':''}}" bindtap="{{showCommentBtn ? 'selectComment':''}}" data-value="满意">满意</view>
+      </view>
+      <view class="comment-box">
+        <textarea class="comment-value" placeholder="添加理由..." bindinput="bindCommentInput" bindfocus="bindTextfocus" bindblur="bindblur" value="{{commentValue}}" hidden="{{!showCommentBtn}}"></textarea>
+        <view class="comment-value scroll-container" hidden="{{showCommentBtn}}">{{commentValue}}</view>
+      </view>
+      <view class="btn btn-main" bindtap="submitComment" hidden="{{!showCommentBtn}}">提交评价</view>
+      <image class="close" mode="widthFix" src="/pages/images/llz_close.png" bindtap="closeCommentPage"></image>
+    </view>
+  </view>
+</view>

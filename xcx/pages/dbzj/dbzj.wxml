@@ -1,0 +1,34 @@
+<!--pages/dbzj/dbzj.wxml-->
+<view class="page-container scroll-container">
+  <view class="header">
+    <image mode="widthFix" src="/pages/images/dbzj_banner.png"></image>
+  </view>
+  <view class="type-box flex-row-between-center">
+    <view class="one {{typeIndex === '1' ? 'checked':''}}" bindtap="selectType" data-index="1">代表之家</view>
+    <view class="one {{typeIndex === '2' ? 'checked':''}}" bindtap="selectType" data-index="2">代表联络站</view>
+    <view class="one {{typeIndex === '3' ? 'checked':''}}" bindtap="selectType" data-index="3">代表联络点</view>
+  </view>
+  <view class="main scroll-container" wx:if="{{pageReady}}">
+    <view class="one" wx:for="{{rankList}}" wx:key="{{index}}" bindtap="turnTo">
+      <view class="name one-info">{{item.houseName}}</view>
+      <view class="one-info flex-row">
+        <image class="icon" mode="widthFix" src="../images/dbzj_icon_address.png"></image>
+        <text class="label">
+          <text>地址</text>
+        </text>
+        <text class="con">{{item.address}}</text>
+      </view>
+      <view class="one-info flex-row">
+        <image class="icon" mode="widthFix" src="../images/dbzj_icon_phone.png"></image>
+        <text class="label">
+          <text>联系电话</text>
+        </text>
+        <text class="con" bindtap="giveCall" data-phone="{{item.phoneNum}}">{{item.phoneNum}}</text>
+      </view>
+    </view>
+
+    <view class="list-null" hidden="{{rankList.length > 0}}">
+      空空如也~
+    </view>
+  </view>
+</view> 

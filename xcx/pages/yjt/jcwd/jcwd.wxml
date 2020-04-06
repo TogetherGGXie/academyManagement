@@ -1,0 +1,30 @@
+<!--pages/yjt/jcwd/jcwd.wxml-->
+<view class="page-container">
+  <image mode="widthFix" class="left-chain" src="/pages/images/lian.png"></image>
+  <image mode="widthFix" class="right-chain" src="/pages/images/lian.png"></image>
+  <view class="header flex-row-center-center">
+    <image mode="widthFix" src="/pages/images/wd_icon_title.png"></image>
+    <text>精彩问答</text>
+  </view>
+  <view class="main">
+    <view class="list-box">
+      <scroll-view scroll-y class="main-scroll scroll-view" bindscrolltolower="scrollBottom" wx:if="{{pageReady}}">
+        <view class="one" wx:for="{{queList}}" wx:key="{{index}}">
+          <view class="one-info flex-row">
+            <view class="label">Q:</view>
+            <view class="content">{{item.content}}</view>
+          </view>
+          <view class="one-info flex-row">
+            <view class="label">A:</view>
+            <view class="content">{{item.reply}}</view>
+          </view>
+        </view>
+        <view class="list-null" wx:if="{{queList&&queList.length <= 0}}">空空如也~</view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="btn-box flex-row-center-center">
+    <view class="btn"  data-url="../yjt" bindtap='turnTo'>我要提问</view>
+    <view class="btn"  data-url="../../history/history" bindtap='turnTo' style="margin-left: 90rpx;">我的记录</view>
+  </view>
+</view>

@@ -1,0 +1,26 @@
+<!--pages/rddbllz/rddbllz.wxml-->
+<view class="page">
+  <view class="page-container">
+    <view class="header">
+      <image mode="widthFix" src="/pages/images/rddbllz_banner.png"></image>
+    </view>
+    <view class="main scroll-container flex-row-between-start">
+      <view class="one" bindtap='turnTo' data-url="./small-areas/small-areas?area={{item.district}}" wx:for="{{areas}}" wx:key="{{index}}">
+        <image mode="widthFix" src="{{bgList[index%5]}}"></image>
+        <text class="area-name">{{item.name}}</text>
+      </view>
+      <!-- <block wx:for="aaaa">
+        <view class="one" bindtap='turnTo' data-url="./record/record">
+          <image mode="widthFix" src="{{bgList[areas.length%5]}}"></image>
+          <text class="area-name">约见记录</text>
+        </view>
+      </block> -->
+    </view>
+    <view class="btn btn-record flex-row-center-center" bindtap='turnTo' data-url="./record/record">
+      <text>约见\n记录</text>
+    </view>
+    <!-- <view class="bottom flex-row-center-center">
+      <view class="btn" bindtap='turnTo' data-url="./record/record">约见<br/>记录</view>
+    </view> -->
+  </view>
+</view>

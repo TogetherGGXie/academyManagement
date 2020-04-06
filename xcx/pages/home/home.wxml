@@ -1,0 +1,85 @@
+<!--pages/home/home.wxml-->
+<view class="page" style="background-image: url('https://st-file.yunban.cn/20180524/bg.png')" wx:if="{{!showInitPage}}">
+  <view class="logo">
+    <image src="https://st-file.yunban.cn/20180524/logo.png"></image>
+  </view>
+  <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots="true">
+    <block wx:for="{{slides}}">
+      <swiper-item>
+        <view class="slide" style="background-image:url({{item}})"></view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- <view class="all" style="height: calc(100vh - 520rpx); overflow-x: hidden; overflow-y: auto;margin-top: 10rpx;"> -->
+  <view class="all">
+    <view class="long item-new" data-url="../dbzj/dbzj" bindtap='turnTo' style="background-image:url('https://shzj.h5yunban.com//uploadsoss/rddb_xcx/2019-11-13/fb74cde8269b49bf41e60e9f195dc238.png')">
+      <!-- <image src="style="background-image:url('../images/icon09.png')"" mode="widthFix" style="width: 100%;vertical-align:middle;"></image> -->
+      <image class="new-icon" mode="widthFix" src="../images/new5.png" mode="widthFix" wx:if="{{newIconShow}}"></image>
+    </view>
+    <view class="long item-new" data-url="../rddbllz/rddbllz" bindtap='turnTo' style="background-image:url('https://shzj.h5yunban.com//uploadsoss/rddb_xcx/2019-11-13/f6a9655fd8664bc2dff0a413d904c178.png')">
+      <!-- <image src="../images/icon09.png" mode="widthFix" style="width: 100%;vertical-align:middle;"></image> -->
+      <image class="new-icon" mode="widthFix" src="../images/new5.png" mode="widthFix" wx:if="{{newIconShow}}"></image>
+    </view>
+    <view class="item" data-url="../new_jbqk/new_jbqk" bindtap='turnTo'>
+      <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon01.png')"></view>
+    </view>
+    <view class="item" data-url="../news/news" bindtap='turnTo'>
+      <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon02.png')"></view>
+    </view>
+    <view class="item" data-url="../zhlj/zhlj" bindtap='turnTo'>
+      <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon03.png')"></view>
+    </view>
+    <view class="long" data-url="../dbxx/dbxx" bindtap='turnTo'>
+      <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon07.png')"></view>
+    </view>
+    <view class="long" data-url="../jyz/jyz" bindtap='turnTo'>
+      <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon08.png')"></view>
+    </view>
+    <view class="item" data-url="../dblz/dblz" bindtap='turnTo'>
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" hover-class="none">
+        <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon04.png')"></view>
+      </button>
+      <view class="suo"></view>
+    </view>
+    <view class="item" data-url="../yjt/jcwd/jcwd" bindtap='turnTo'>
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" hover-class="none">
+        <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon05.png')"></view>
+      </button>
+      <!-- <view class="suo"></view> -->
+    </view>
+    <view class="item" data-url="../dbhd/dbhd" bindtap='turnTo'>
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" hover-class="none">
+        <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon06.png')"></view>
+      </button>
+      <view class="suo"></view>
+    </view>
+  </view>
+</view>
+
+<view id="homePage" class="page-container" hidden="{{!showInitPage}}">
+  <image class="top-bg" mode="widthFix" src="{{images.bg}}"></image>
+  <image class="bottom-bg" mode="widthFix" src="https://st-img.yunban.cn/uploads2/rddb_xcx/19-10/d6eaab1919eb04768fa4f3c8ba752e28_small.png"></image>
+  <!-- <image class="h-logo" mode="widthFix" src="{{images.logo}}"></image> -->
+  <!-- <image class="title2" mode="widthFix" src="{{images.title2}}"></image> -->
+  <!-- <view class="title2" style="background-image: url('{{images.title2}}');"></view> -->
+  <view class="title2">
+    <view class="title2-1 one" style="background-image: url('{{images.title2}}');"></view>
+    <view class="title2-2 one" style="background-image: url('{{images.title2}}');"></view>
+    <view class="title2-3 one" style="background-image: url('{{images.title2}}');"></view>
+    <view class="title2-4 one" style="background-image: url('{{images.title2}}');"></view>
+  </view>
+  <image class="title" mode="widthFix" src="{{images.title}}" animation="{{birdAnimation}}" bindtransitionend='animationend'></image>
+  <image class="bird1" mode="widthFix" src="{{images.bird1}}"></image>
+  <image class="bird2" mode="widthFix" src="{{images.bird2}}"></image>
+  <image class="bird3" mode="widthFix" src="{{images.bird3}}"></image>
+  <image class="bird4" mode="widthFix" src="{{images.bird4}}" ></image>
+  <image class="stars" mode="widthFix" src="{{images.stars}}" ></image>
+  <!-- <view class="star-box">
+    <image mode="widthFix" src="{{images.star1}}"></image>
+    <image mode="widthFix" src="{{images.star2}}"></image>
+    <image mode="widthFix" src="{{images.star3}}"></image>
+    <image mode="widthFix" src="{{images.star4}}"></image>
+    <image mode="widthFix" src="{{images.star5}}"></image>
+  </view> -->
+</view>

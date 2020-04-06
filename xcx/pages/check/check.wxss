@@ -1,0 +1,86 @@
+/* pages/check/check.wxss */
+page {
+  background: #e65740;
+}
+.page {
+  width: 94vw;
+  display: inline-block;
+  padding: 1vw 3vw;
+}
+.frame {
+  width: 74vw;
+  padding: 6vw 10vw 4vw 10vw;
+  background-color: #fff;
+  border-radius: 8px;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-image: url("https://st-file.yunban.cn/20180524/bottom.png");
+}
+.icon {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  margin-right: 2vw;
+  top: 3px;
+  width:17px;
+  height:19px;
+}
+.head {
+  text-align: center;
+}
+.head-image {
+  width: 60px;
+  height: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  border-radius: 50%;
+}
+.label {
+  display: inline-block;
+  color: #5b5b5b;
+  font-size: 15px;
+}
+input {
+  padding-bottom: 2vw;
+  border-bottom: 2px solid #e7e7e7;
+  font-size: 15px;
+  margin-top: 4vw;
+  margin-bottom: 4vw;
+}
+.btn {
+  font-size: 15px;
+  color: #fff;
+  background: linear-gradient(rgb(249,141,102), rgb(230, 87, 64));
+  display: inline-block;
+  border-radius: 20px;
+  padding: 2vw 14vw;
+  margin-top: 14vw;
+  margin-bottom: 8vw;
+}
+.text-center {
+  text-align: center;
+}
+.relative {
+  position: relative;
+}
+.code {
+  position: absolute;
+  display: inline-block;
+  color: #e1e1e1;
+  font-size: 12px;
+  border: 1px solid #e1e1e1;
+  bottom: 5px;
+  right: 0px;
+  border-radius: 1vw;
+  padding: 1vw 3vw;
+  z-index: 2;
+}
+.show {
+  border: 1px solid #e65740;
+  color: #e65740;
+}

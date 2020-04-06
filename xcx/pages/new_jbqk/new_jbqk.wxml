@@ -1,0 +1,15 @@
+<view id='item'>
+  <view class="page1 {{page1Type?'show':'hide'}}">
+    <image class='bgImg' mode='aspectFill' src='http://shzj.h5yunban.com/rddb_xcx/new/bg.png'></image>
+    <image class='line line1' bindtap='iconImg' data-name='基本情况' mode='aspectFill' src='http://shzj.h5yunban.com/rddb_xcx/new/line1.png'></image>
+    <image class='line line2' bindtap='iconImg' data-name='议事规则' mode='aspectFill' src='http://shzj.h5yunban.com/rddb_xcx/new/line2.png'></image>
+    <image class='line line3' bindtap='iconImg' data-name='工作制度' mode='aspectFill' src='http://shzj.h5yunban.com/rddb_xcx/new/line3.png'></image>
+  </view>
+  <view class="page2 {{page2Type?'hide':'show'}}">
+    <!-- <image class='lowerImg' mode='aspectFill' src='../images/lower.png'></image> -->
+    <image class='arrowImg' bindtap='arrowImg' mode='aspectFill' src='http://shzj.h5yunban.com/rddb_xcx/new/arrow.png'></image>
+    <block wx:for-items="{{items.img}}">
+      <image class='itemsImg' mode='widthFix' bindtap='saveImgToPhotosAlbumTap' data-url="http://shzj.h5yunban.com/rddb_xcx/new/{{item.url}}" src="http://shzj.h5yunban.com/rddb_xcx/new/{{item.url}}"></image>
+    </block>
+  </view>
+</view>

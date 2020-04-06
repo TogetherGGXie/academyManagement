@@ -1,0 +1,26 @@
+<!--pages/home/init/init.wxml-->
+<view id="homePage" class="page-container" style="background-image: url('{{images.bg}}')">
+  <image class="logo" mode="widthFix" src="{{images.logo}}"></image>
+  <!-- <image class="title2" mode="widthFix" src="{{images.title2}}"></image> -->
+  <!-- <view class="title2" style="background-image: url('{{images.title2}}');"></view> -->
+  <view class="title2">
+    <view class="title2-1 one" style="background-image: url('{{images.title2}}');"></view>
+    <view class="title2-2 one" style="background-image: url('{{images.title2}}');"></view>
+    <view class="title2-3 one" style="background-image: url('{{images.title2}}');"></view>
+    <view class="title2-4 one" style="background-image: url('{{images.title2}}');"></view>
+  </view>
+  <image class="title" mode="widthFix" src="{{images.title}}" animation="{{birdAnimation}}" bindtransitionend='animationend'></image>
+  <image class="bird1" mode="widthFix" src="{{images.bird1}}"></image>
+  <image class="bird2" mode="widthFix" src="{{images.bird2}}"></image>
+  <image class="bird3" mode="widthFix" src="{{images.bird3}}"></image>
+  <image class="bird4" mode="widthFix" src="{{images.bird4}}" ></image>
+  <image class="stars" mode="widthFix" src="{{images.stars}}" ></image>
+  <!-- <view class="star-box">
+    <image mode="widthFix" src="{{images.star1}}"></image>
+    <image mode="widthFix" src="{{images.star2}}"></image>
+    <image mode="widthFix" src="{{images.star3}}"></image>
+    <image mode="widthFix" src="{{images.star4}}"></image>
+    <image mode="widthFix" src="{{images.star5}}"></image>
+  </view> -->
+</view>
+

@@ -1,0 +1,12 @@
+<!--pages/dbzj/article-content/article-content.wxml-->
+<import src="../../../wxParse/wxParse.wxml"/>
+<view class="page">
+  <view class="content">
+    <view class="title">{{newsTitle}}</view>
+    <view class="grey-text">{{newsTime}}</view>
+    <view class="detail">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  </view>
+</view>
+

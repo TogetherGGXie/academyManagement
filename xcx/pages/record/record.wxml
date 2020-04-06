@@ -1,0 +1,30 @@
+<!--pages/record/record.wxml-->
+<view class='page'>
+  <scroll-view scroll-y style="height: {{height}}px;" bindscrolltolower="lower">
+    <view class="item" wx:for="{{list}}" wx:for-index="idx" wx:for-item="itemName">
+      <view class="tab">
+        <view class="time">
+          <view class="day">{{itemName.signDay}}</view>
+          <view>{{itemName.signTime}}</view>
+        </view>
+        <view class="title">{{itemName.actTitle}}</view>
+        <view class="ok">已签到</view>
+        <image class="lian-left" src="https://st-file.yunban.cn/20180524/lian.png"></image>
+        <image class="lian-right" src="https://st-file.yunban.cn/20180524/lian.png"></image>
+      </view>
+      <view class="content">
+        <view class="clearfix">
+          <view class="icon" style="background-image:url(https://st-file.yunban.cn/20180524/people.png)"></view>
+          <view class="head">会议提要</view>
+          <view class="abstract">{{itemName.actBrief}}</view>
+        </view>
+        <view class="clearfix">
+          <view class="icon" style="background-image:url(https://st-file.yunban.cn/20180524/address.png)"></view>
+          <view class="head">会议地点</view>
+          <view class="abstract">{{itemName.actAddress}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view class="nothing {{nothing?'hide':''}}"></view>
+</view>

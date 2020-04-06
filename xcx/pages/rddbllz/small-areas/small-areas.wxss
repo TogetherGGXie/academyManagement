@@ -1,0 +1,84 @@
+/* pages/rddbllz/small-areas/small-areas.wxss */
+@import '../../style/common.wxss';
+#listPage {
+  position: relative;
+}
+
+#listPage .one {
+  position: relative;
+  width: 94vw;
+  margin: 1.25vw auto;
+  padding: 4vw 4vw 4vw 4vw;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+#listPage .one:nth-child(1) {
+  margin-top: 0;
+}
+
+#listPage .one:nth-child(n+2) {
+  margin-top: 30rpx;
+}
+
+#listPage .one .head-img {
+  width: 21vw;
+  height: 27vw;
+}
+
+#listPage .one .right {
+  margin-left: 5px;
+}
+
+#listPage .one .name {
+  color: #000;
+  font-size: 14px;
+}
+
+#listPage .one .desc-box {
+  color: #000;
+  font-size: 14px;
+  margin-top: 1vw;
+}
+
+#listPage .one .desc-box .fire {
+  width: 4vw;
+  height: 5.6vw;
+  margin-bottom: -2px;
+  margin-right: 5px;
+}
+
+#listPage .one .desc-box .desc {
+  margin-top: 8rpx;
+  color: #999999;
+  font-size: 13px;
+}
+
+#listPage .one .btn-box {
+  position: absolute;
+  bottom: 4vw;
+  right: 5vw;
+}
+
+#listPage .one .btn-box .btn {
+  background: linear-gradient(rgb(249,102,100), rgb(250, 130, 110));
+  display: inline-block;
+  padding: 1vw 6vw 1.5vw 6vw;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+#listPage .one .btn-box .btn:nth-child(2) {
+  margin-left: 4vw;
+}
+
+.one-small-area {
+  position: relative;
+  width: 94vw;
+  margin: 2.5vw auto;
+  padding: 2vw 4vw;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #fff;
+}

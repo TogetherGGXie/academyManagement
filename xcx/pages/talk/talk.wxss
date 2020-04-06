@@ -1,0 +1,178 @@
+/* pages/talk/talk.wxss */
+page {
+  background: #f3f3f3;
+  height: 100vh;
+}
+.page {
+  padding: 1vh 3vw;
+}
+.frame {
+  padding: 2vw 3vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  -webkit-overflow-scrolling:touch;
+}
+.item {
+  position: relative;
+  margin-bottom: 4vw;
+}
+.left .message {
+  position: relative;
+  background-color: #fff;
+  border-radius: 0px 8px 8px 8px;
+  display: inline-block;
+  padding: 3vw 4vw;
+  margin-top: 7vw;
+  color: #000;
+  max-width: 60vw;
+  word-wrap:break-word; 
+  font-size: 15px;
+}
+.left .headimage {
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 5vw;
+  float: left;
+  border-radius: 2px;
+}
+.left .name {
+  display: inline-block;
+  position: absolute;
+  color: #9f9f9f;
+  font-size: 15px;
+}
+.right .message {
+  position: relative;
+  background-color: #fff;
+  border-radius: 8px 0px 8px 8px;
+  display: inline-block;
+  padding: 3vw 4vw;
+  margin-top: 7vw;
+  color: #000;
+  max-width: 60vw;
+  word-wrap:break-word;
+  font-size: 15px;
+}
+.right {
+  text-align: right;
+}
+.right .headimage {
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 5vw;
+  float: right;
+  border-radius: 2px;
+}
+.right .name {
+  display: inline-block;
+  position: absolute;
+  color: #9f9f9f;
+  font-size: 15px;
+  right: 54px;
+}
+.chat {
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
+  background-color: #fff;
+}
+.content {
+  height: 30px;
+  width: 60vw;
+  margin: 8px 16vw;
+  padding: 2px 4vw;
+  border: 1px solid #eaeaea;
+  border-radius: 2px;
+  font-size: 14px;
+}
+.hide {
+  display: none;
+}
+.btn {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 10px 10px;
+}
+.add {
+  right: 0px;
+  top: 0px;
+}
+.press {
+  height: 30px;
+  width: 60vw;
+  margin: 8px 16vw;
+  padding: 2px 4vw;
+  border: 1px solid #eaeaea;
+  border-radius: 2px;
+  background-color: #eee;
+  text-align: center;
+  font-size: 16px;
+  line-height: 30px;
+}
+.grey {
+  background-color: #ddd;
+}
+.ing {
+  position: absolute;
+  height: 30vw;
+  width: 30vw;
+  right: 0px;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+}
+.ing image {
+  width: 100%;
+  height: 100%;
+}
+.ing .text {
+  position: absolute;
+  color: #fff;
+  font-size: 12px;
+  bottom: 4px;
+  width: 100%;
+  text-align: center;
+}
+.image-voice-left {
+  width: 10px;
+  height: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 90px;
+}
+.image-voice-right {
+  width: 10px;
+  height: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 90px;
+  transform: rotate(-180deg);
+}
+scroll-view {
+  position: absolute;
+  width:88vw;
+  padding-right:5vw;
+  right:-2vw;
+  
+}
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  color: transparent;
+}
