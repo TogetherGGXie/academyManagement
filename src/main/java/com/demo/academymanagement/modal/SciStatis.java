@@ -14,15 +14,15 @@ import java.io.Serializable;
  * </p>
  *
  * @author XieZhiyang123
- * @since 2020-03-24
+ * @since 2020-04-07
  */
-@TableName("notice_statis")
-public class NoticeStatis implements Serializable {
+@TableName("sci_statis")
+public class SciStatis implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("notice_id")
-    private Integer noticeId;
+    @TableId("sci_id")
+    private Integer sciId;
     @TableField("page_view")
     private Integer pageView;
     @TableField("create_time")
@@ -33,12 +33,12 @@ public class NoticeStatis implements Serializable {
     private Date lastUpdTime;
 
 
-    public Integer getNoticeId() {
-        return noticeId;
+    public Integer getSciId() {
+        return sciId;
     }
 
-    public void setNoticeId(Integer noticeId) {
-        this.noticeId = noticeId;
+    public void setSciId(Integer sciId) {
+        this.sciId = sciId;
     }
 
     public Integer getPageView() {
@@ -67,8 +67,8 @@ public class NoticeStatis implements Serializable {
 
     @Override
     public String toString() {
-        return "NoticeStatis{" +
-        ", noticeId=" + noticeId +
+        return "SciStatis{" +
+        ", sciId=" + sciId +
         ", pageView=" + pageView +
         ", createTime=" + createTime +
         ", lastUpdTime=" + lastUpdTime +

@@ -12,5 +12,5 @@ import com.baomidou.mybatisplus.service.IService;
  * @since 2020-03-24
  */
 public interface NewsStatisService extends IService<NewsStatis> {
-
+    Boolean updataNewsStatis(Integer newsId);
 }

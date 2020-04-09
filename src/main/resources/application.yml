@@ -8,10 +8,10 @@ spring:
     url: jdbc:mysql://localhost/academy_management?useSSL=false&serverTimezone=UTC
     username: root
     password: root
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
+  mvc:
+    static-path-pattern: /**
+  resources:
+      static-locations: file:C:/academy/img/
 
 mybatis-plus:
   mapper-locations: classpath:com/demo/academymanagement/mapper/mapping/*.xml

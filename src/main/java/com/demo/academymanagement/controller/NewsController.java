@@ -4,8 +4,10 @@ package com.demo.academymanagement.controller;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.demo.academymanagement.modal.News;
+import com.demo.academymanagement.modal.NewsStatis;
 import com.demo.academymanagement.modal.Notice;
 import com.demo.academymanagement.service.NewsService;
+import com.demo.academymanagement.service.NewsStatisService;
 import com.demo.academymanagement.service.NoticeService;
 import com.demo.academymanagement.util.Result;
 import io.swagger.annotations.Api;
@@ -21,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Date;
 import java.util.Iterator;
 
 /**
@@ -39,6 +42,9 @@ public class NewsController {
 
     @Autowired
     private NewsService newsService;
+
+    @Autowired
+    private NewsStatisService newsStatisService;
 
     @ApiOperation("获取新闻列表")
     @GetMapping("/getNews")
@@ -60,6 +66,19 @@ public class NewsController {
                         eq("news_type", newsType).eq("status", 1).
                         orderDesc(Arrays.asList(new String[] {"rank", "news_time"})));
         return new Result(200, "获取新闻成功", records);
+    }
+
+
+    @ApiOperation("获取新闻信息")
+    @GetMapping("/getNewsInfo")
+    public Result getNewsInfo(HttpServletRequest request,
+                              @RequestParam(value = "newsId") Integer newsId) {
+        if (newsId == null ) {
+            return new Result(400, "缺少参数，获取新闻失败");
+        }
+        News news = newsService.selectById(newsId);
+        newsStatisService.updataNewsStatis(newsId);
+        return new Result(200, "获取新闻成功", news);
     }
 
 }

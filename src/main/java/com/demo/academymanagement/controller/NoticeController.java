@@ -3,8 +3,10 @@ package com.demo.academymanagement.controller;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
+import com.demo.academymanagement.modal.News;
 import com.demo.academymanagement.modal.Notice;
 import com.demo.academymanagement.service.NoticeService;
+import com.demo.academymanagement.service.NoticeStatisService;
 import com.demo.academymanagement.util.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -31,6 +33,9 @@ public class NoticeController {
     @Autowired
     private NoticeService noticeService;
 
+    @Autowired
+    private NoticeStatisService noticeStatisService;
+
     @ApiOperation("获取公告列表")
     @GetMapping("/getNotices")
     public Result getNotice(HttpServletRequest request,
@@ -47,6 +52,18 @@ public class NoticeController {
                         .eq("status", 1).
                         orderDesc(Arrays.asList(new String[] {"publish_time"})));
         return new Result(200, "获取公告成功", records);
+    }
+
+    @ApiOperation("获取公告信息")
+    @GetMapping("/getNoticeInfo")
+    public Result getNoticeInfo(HttpServletRequest request,
+                              @RequestParam(value = "noticeId") Integer noticeId) {
+        if (noticeId == null ) {
+            return new Result(400, "缺少参数，获取公告失败");
+        }
+        Notice notice = noticeService.selectById(noticeId);
+        noticeStatisService.updataNoticeStatis(noticeId);
+        return new Result(200, "获取公告成功", notice);
     }
 }
 

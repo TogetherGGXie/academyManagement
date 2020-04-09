@@ -1,5 +1,6 @@
 package com.demo.academymanagement.modal;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.enums.IdType;
 import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableId;
@@ -39,8 +40,10 @@ public class User implements Serializable {
      */
     private Integer status;
     @TableField("created_at")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date createdAt;
     @TableField("updated_at")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date updatedAt;
     /**
      * 学号

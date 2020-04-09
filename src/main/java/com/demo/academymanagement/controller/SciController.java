@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.plugins.Page;
 import com.demo.academymanagement.modal.Notice;
 import com.demo.academymanagement.modal.Sci;
 import com.demo.academymanagement.service.SciService;
+import com.demo.academymanagement.service.SciStatisService;
 import com.demo.academymanagement.util.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -37,6 +38,9 @@ public class SciController {
     @Autowired
     private SciService sciService;
 
+    @Autowired
+    private SciStatisService sciStatisService;
+
 
     @ApiOperation("获取科研")
     @GetMapping(value = "/getScis")
@@ -58,6 +62,18 @@ public class SciController {
                         .eq("status", 1).eq("type", type).
                         orderDesc(Arrays.asList(new String[] {"publish_time"})));
         return new Result(200, "获取科研成功", records);
+    }
+
+    @ApiOperation("获取科研动态信息")
+    @GetMapping("/getSciInfo")
+    public Result getSciInfo(HttpServletRequest request,
+                                @RequestParam(value = "sciId") Integer sciId) {
+        if (sciId == null ) {
+            return new Result(400, "缺少参数，获取科研动态失败");
+        }
+        Sci sci = sciService.selectById(sciId);
+        sciStatisService.updataSciStatis(sciId);
+        return new Result(200, "获取科研动态成功", sci);
     }
 
 

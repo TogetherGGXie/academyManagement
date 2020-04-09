@@ -1,6 +1,8 @@
 package com.demo.academymanagement.modal;
 
 import java.util.Date;
+
+import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;
@@ -24,8 +26,10 @@ public class NewsStatis implements Serializable {
     @TableField("page_view")
     private Integer pageView;
     @TableField("create_time")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
     @TableField("last_upd_time")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date lastUpdTime;
 
 

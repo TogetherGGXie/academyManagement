@@ -1,5 +1,6 @@
 package com.demo.academymanagement.modal;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.enums.IdType;
 import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableId;
@@ -83,6 +84,7 @@ public class Supervisor implements Serializable {
      * 创建时间
      */
     @TableField("create_time")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
     /**
      * 1:正常   -1:删除

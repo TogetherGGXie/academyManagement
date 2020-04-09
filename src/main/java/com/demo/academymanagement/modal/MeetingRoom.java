@@ -1,5 +1,6 @@
 package com.demo.academymanagement.modal;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.enums.IdType;
 import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableId;
@@ -47,11 +48,13 @@ public class MeetingRoom implements Serializable {
      * 创建时间
      */
     @TableField("create_time")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
     /**
      * 最近修改时间
      */
     @TableField("last_upd_time")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date lastUpdTime;
 
 

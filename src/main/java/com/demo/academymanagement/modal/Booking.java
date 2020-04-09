@@ -1,5 +1,6 @@
 package com.demo.academymanagement.modal;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.enums.IdType;
 import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableId;
@@ -39,16 +40,19 @@ public class Booking implements Serializable {
      * 开始时间
      */
     @TableField("start_time")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date startTime;
     /**
      * 结束时间
      */
     @TableField("end_time")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date endTime;
     /**
      * 申请时间
      */
     @TableField("create_time")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
     /**
      * 状态

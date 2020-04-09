@@ -1,5 +1,6 @@
 package com.demo.academymanagement.modal;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.enums.IdType;
 import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableId;
@@ -39,6 +40,10 @@ public class Sci implements Serializable {
     @TableField("article_image")
     private String articleImage;
     /**
+     * 简介
+     */
+    private String brief;
+    /**
      * 内容
      */
     private String content;
@@ -46,12 +51,14 @@ public class Sci implements Serializable {
      * 发布时间
      */
     @TableField("publish_time")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date publishTime;
     /**
      * 1：正常   -1：删除
      */
     private Integer status;
     @TableField("create_time")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
 
 
@@ -122,14 +129,15 @@ public class Sci implements Serializable {
     @Override
     public String toString() {
         return "Sci{" +
-        ", articleId=" + articleId +
-        ", type=" + type +
-        ", title=" + title +
-        ", articleImage=" + articleImage +
-        ", content=" + content +
-        ", publishTime=" + publishTime +
-        ", status=" + status +
-        ", createTime=" + createTime +
-        "}";
+                "articleId=" + articleId +
+                ", type=" + type +
+                ", title='" + title + '\'' +
+                ", articleImage='" + articleImage + '\'' +
+                ", brief='" + brief + '\'' +
+                ", content='" + content + '\'' +
+                ", publishTime=" + publishTime +
+                ", status=" + status +
+                ", createTime=" + createTime +
+                '}';
     }
 }

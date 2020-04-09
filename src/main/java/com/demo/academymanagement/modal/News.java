@@ -1,5 +1,6 @@
 package com.demo.academymanagement.modal;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.enums.IdType;
 import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableId;
@@ -54,6 +55,7 @@ public class News implements Serializable {
      * 发布时间
      */
     @TableField("news_time")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date newsTime;
     /**
      * 状态   1:展示  -1:删除
@@ -63,6 +65,7 @@ public class News implements Serializable {
      * 创建时间
      */
     @TableField("create_time")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
     private Integer rank;
 
