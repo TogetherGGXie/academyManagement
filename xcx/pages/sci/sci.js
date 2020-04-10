@@ -9,10 +9,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    text: ['要闻综合'],
+    text: ['科学动态', '科研政策', '科研成果', '科研项目'],
     index: 0,
     list: [],
-    newsType: 1,
+    type: 1,
     pageNum: 1,
     pages: 1,
     height: 0,
@@ -35,7 +35,7 @@ Page({
   },
   turnTo: function (e) {
     wx.navigateTo({
-      url: '../news-detail/news-detail?id=' + e.currentTarget.dataset.id,
+      url: '../sci-detail/sci-detail?id=' + e.currentTarget.dataset.id,
     })
   },
   /**
@@ -44,14 +44,20 @@ Page({
   getList: function () {
     var that = this;
     request({
-      url: 'news/getNews',
+      url: 'sci/getScis',
       data: {
         page: that.data.pageNum,
         pageSize: 10,
-        newsType: that.data.newsType
+        type: that.data.type
       },
     }).then(res => {
       var data = res.data
+      for (var i = 0; i < data.records.length; i++) {
+        var listIndex = data.records[i];
+        var time = (listIndex.publishTime).split(" ")[0];
+        listIndex.publishTime = time;
+        console.log(listIndex)
+      }
       that.setData({
         list: that.data.list.concat(data.records),
         pages: data.pages
@@ -97,7 +103,7 @@ Page({
   choose: function (e) {
     this.setData({
       index: e.currentTarget.dataset.id,
-      newsType: e.currentTarget.dataset.id + 1,
+      type: e.currentTarget.dataset.id + 1,
       list:[],
       pages: 1,
       pageNum: 1

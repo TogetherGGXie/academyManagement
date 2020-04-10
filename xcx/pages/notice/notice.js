@@ -1,4 +1,7 @@
 // pages/jyz/jyz.js
+var {
+  request
+} = require('../../utils/util.js');
 Page({
 
   /**
@@ -6,8 +9,8 @@ Page({
    */
   data: {
     list:[],
-    pn: 1,
-    amont: 1,
+    pageNum: 1,
+    pages: 1,
     height: 0,
     nothing: true,
     itemName:'',
@@ -17,53 +20,42 @@ Page({
    */
   getList: function () {
     var that = this;
-    wx.request({
-      url: 'https://shzj.h5yunban.com/rddb_xcx/webservice.php',
+    request({
+      url: 'notice/getNotices',
       data: {
-        _url: "system/getStudys",
-        DESC: ["createTime"],
-        cookiesKey: wx.getStorageSync('cookiesKey'),
-        pageNum: that.data.pn
+        page: that.data.pageNum,
+        pageSize: 10,
       },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      method: 'POST',
-      success: function (result) {
-        var data = result.data.result;
-        if (result.data.status == 200) {
-          for (var i = 0; i < data.list.length; i++) {
-            var listIndex = data.list[i];
-            var time = (listIndex.createTime).split(" ")[0];
-            listIndex.time = time;
-          }
-          that.setData({
-            list: that.data.list.concat(data.list),
-            amount: Math.ceil(data.amount / 10)
-          });
-          if (data.list == "" || data.list == null) {
-            that.setData({
-              nothing: false
-            })
-          } else {
-            that.setData({
-              nothing: true
-            })
-          }
-        } else if (result.data.status == 410) {
-
-        }
+    }).then(res => {
+      var data = res.data
+      for (var i = 0; i < data.records.length; i++) {
+        var listIndex = data.records[i];
+        var time = (listIndex.createTime).split(" ")[0];
+        listIndex.time = time;
       }
-    });
+      that.setData({
+        list: that.data.list.concat(data.records),
+        pages: data.pages
+      });
+      if (data.records == "" || data.records == null) {
+        that.setData({
+          nothing: false
+        })
+      } else {
+        that.setData({
+          nothing: true
+        })
+      }
+    })
   },
   /**
    * 
    */
   lower: function () {
     var that = this;
-    if (that.data.pn < that.data.amount) {
+    if (that.data.pageNum < that.data.pages) {
       that.setData({
-        pn: that.data.pn + 1
+        pageNum: that.data.pageNum + 1
       });
       that.getList();
     }
@@ -86,8 +78,9 @@ Page({
    * 跳转
    */
   turnTo: function (e) {
+    console.log(e.currentTarget.dataset.id)
     wx.navigateTo({
-      url: '../jyz-detail/jyz-detail?id=' + e.currentTarget.dataset.id,
+      url: '../notice-detail/notice-detail?id=' + e.currentTarget.dataset.id,
     });
   },
   /**

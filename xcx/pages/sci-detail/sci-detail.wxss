@@ -1,0 +1,33 @@
+/* pages/gzyw-detail/gzyw-detail.wxss */
+@import "../../wxParse/wxParse.wxss";
+page {
+  background: #0C72C2;
+}
+.page {
+  width: 94vw;
+  display: inline-block;
+  padding: 1vw 3vw;
+}
+.content {
+  width: 86vw;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 4vw;
+}
+.title {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 4vw;
+}
+#myVideo {
+  width: 86vw;
+}
+.detail {
+  font-size: 14px;
+  margin-top: 2vw;
+}
+.grey-text {
+  color: #999999;
+  font-size: 12px;
+  margin-bottom: 10px;
+}

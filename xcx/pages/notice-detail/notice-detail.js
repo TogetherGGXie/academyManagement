@@ -1,13 +1,17 @@
 // pages/jyz-detail/jyz-detail.js
 var WxParse = require('../../wxParse/wxParse.js');
+var {
+  request
+} = require('../../utils/util.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    id:0,
+    noticeId:0,
     title:'',
+    publishTime:'',
     content:''
   },
 
@@ -16,8 +20,9 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    console.log(options.id)
     that.setData({
-      id: options.id
+      noticeId: options.id
     })
     that.getDetail();
   },
@@ -33,30 +38,23 @@ Page({
    */
   getDetail: function () {
     var that = this;
-    wx.request({
-      url: 'https://shzj.h5yunban.com/rddb_xcx/webservice.php',
+    request({
+      url: 'notice/getNoticeInfo',
       data: {
-        _url: "system/getStudy",
-        systemId: that.data.id,
-        cookiesKey: wx.getStorageSync('cookiesKey'),
+        noticeId: that.data.noticeId
       },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      method: 'POST',
-      success: function (result) {
-        var data = result.data.result;
-        if (result.data.status == 200) {
-          that.setData({
-            title: data.title,
-            content: data.content
-          });
-          WxParse.wxParse('article', 'html', data.content, that, 36);
-        } else if (result.data.status == 410) {
-
-        }
+    }).then(res => {
+      var data = res.data
+      if (res.status == 200) {
+        console.log(data)
+        that.setData({
+          title: data.title,
+          publishTime: data.publishTime,
+          content: data.content
+        });
+        WxParse.wxParse('article', 'html', data.content, that, 36);
       }
-    });
+    })
   },
   /**
    * 生命周期函数--监听页面显示

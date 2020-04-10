@@ -3,6 +3,7 @@
 <view class="page">
   <view class="content">
     <view class="title">{{title}}</view>
+    <view class="grey-text">{{publishTime}}</view>
     <view class="detail">
       <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
     </view>

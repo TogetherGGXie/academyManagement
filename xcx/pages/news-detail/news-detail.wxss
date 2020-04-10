@@ -1,7 +1,7 @@
 /* pages/gzyw-detail/gzyw-detail.wxss */
 @import "../../wxParse/wxParse.wxss";
 page {
-  background: #e65740;
+  background: #0C72C2;
 }
 .page {
   width: 94vw;

@@ -1,7 +1,7 @@
 /* pages/jyz-detail/jyz-detail.wxss */
 @import "../../wxParse/wxParse.wxss";
 page {
-  background: #e65740;
+  background: #0C72C2;
 }
 .page {
   width: 94vw;
@@ -21,6 +21,11 @@ page {
 }
 #myVideo {
   width: 86vw;
+}
+.grey-text {
+  color: #999999;
+  font-size: 12px;
+  margin-bottom: 10px;
 }
 .detail {
   font-size: 14px;

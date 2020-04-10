@@ -1,7 +1,7 @@
 /* pages/jbqk/jbqk.wxss */
 @import "../../wxParse/wxParse.wxss";
 page {
-  background: #e65740;
+  background: #0B66AD;
 }
 .page {
   width: 94vw;
@@ -27,7 +27,7 @@ page {
   padding: 12px 2vw;
   color: #fff;
   font-size: 14px;
-  background-color: #c64b37;
+  background-color: #0B66AD;
   border-radius: 2vw;
   margin: 1vw 1vw 2vw 1vw;
   width: 25vw;

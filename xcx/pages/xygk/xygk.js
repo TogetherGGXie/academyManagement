@@ -1,23 +1,44 @@
 // pages/new_jbqk/new_jbqk.js
+const app = getApp()
+const util = app.util
+
 var imgArr =  [
   {
-    'mame': '基本情况',
+    'name': '学院介绍',
     'img': [
-      { 'url': 'jbqk1.png' }, { 'url': 'jbqk2.png' }, { 'url': 'jbqk3.png' }, { 'url': 'jbqk4.png' }
+      { 'url': 'xyjs1.png' }, { 'url': 'xyjs2.png' }
     ]
   },
   {
-    'mame': '议事规则',
+    'name': '学院领导',
     'img': [
-      { 'url': 'ysgz1.png' }, { 'url': 'ysgz2.png' }
+      { 'url': 'xyld.png' }
     ]
   },
   {
-    'mame': '工作制度',
+    'name': '教授委员会',
     'img': [
-      { 'url': 'gzzd1.png' }, { 'url': 'gzzd2.png' }, { 'url': 'gzzd3.png' }, { 'url': 'gzzd4.png' }, { 'url': 'gzzd5.png' }, { 'url': 'gzzd6.png' }
+      { 'url': 'jswyh.png' }
     ]
-  }
+  },
+  {
+    'name': '监督委员会',
+    'img': [
+      { 'url': 'jdwyh.png' }
+    ]
+  },
+  {
+    'name': '学院架构',
+    'img': [
+      { 'url': 'xyjg.png' }
+    ]
+  },
+  {
+    'name': '发展规划',
+    'img': [
+      
+    ]
+  },
 ];
 var urlArr = [];
 Page({
@@ -28,7 +49,8 @@ Page({
   data: {
     page1Type:true,
     page2Type:true,
-    items : ''
+    items : '',
+    baseUrl: util.baseURL
   },
 
   /**
@@ -95,17 +117,29 @@ Page({
       page2Type: false,
       items:''
     })
-    if (name == "基本情况"){
+    if (name == "学院介绍"){
       that.setData({
         items: imgArr[0]
       })
-    } else if (name == "议事规则"){
+    } else if (name == "学院领导"){
       that.setData({
         items: imgArr[1]
       })
-    }else{
+    } else if (name == "教授委员会") {
       that.setData({
         items: imgArr[2]
+      })
+    } else if (name == "监督委员会") {
+      that.setData({
+        items: imgArr[3]
+      })
+    } else if (name == "学院架构") {
+      that.setData({
+        items: imgArr[4]
+      })
+    } else{
+      that.setData({
+        items: imgArr[5]
       })
     }
     //console.log(that.data.items)
@@ -124,7 +158,7 @@ Page({
     var itemsImg = that.data.items.img;
     urlArr = [];
     for (var i = 0; i < itemsImg.length; i++) {
-      urlArr.push('http://shzj.h5yunban.com/rddb_xcx/new/' + itemsImg[i].url);
+      urlArr.push(this.data.baseUrl + 'xygk/' + itemsImg[i].url);
     }
     console.log(urlArr)
     wx.previewImage({

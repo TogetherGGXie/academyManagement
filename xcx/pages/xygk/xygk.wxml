@@ -1,0 +1,18 @@
+<view id='item'>
+  <view class="page1 {{page1Type?'show':'hide'}}">
+    <!-- <image class='bgImg' mode='aspectFill' src='http://shzj.h5yunban.com/rddb_xcx/new/bg.png'></image> -->
+    <image class='line line1' bindtap='iconImg' data-name='学院介绍' mode='aspectFill' src='{{baseUrl}}xygk/menu_xyjs.png'></image>
+    <image class='line line2' bindtap='iconImg' data-name='学院领导' mode='aspectFill' src='{{baseUrl}}xygk/menu_xyld.png'></image>
+    <image class='line line3' bindtap='iconImg' data-name='教授委员会' mode='aspectFill' src='{{baseUrl}}xygk/menu_jswyh.png'></image>
+    <image class='line line4' bindtap='iconImg' data-name='监督委员会' mode='aspectFill' src='{{baseUrl}}xygk/menu_jdwyh.png'></image>
+    <image class='line line5' bindtap='iconImg' data-name='学院架构' mode='aspectFill' src='{{baseUrl}}xygk/menu_xyjg.png'></image>
+    <image class='line line6' bindtap='iconImg' data-name='发展规划' mode='aspectFill' src='{{baseUrl}}xygk/menu_fzgh.png'></image>
+  </view>
+  <view class="page2 {{page2Type?'hide':'show'}}">
+    <!-- <image class='lowerImg' mode='aspectFill' src='../images/lower.png'></image> -->
+    <image class='arrowImg' bindtap='arrowImg' mode='aspectFill' src='{{baseUrl}}xygk/arrow.png'></image>
+    <block wx:for-items="{{items.img}}">
+      <image class='itemsImg' mode='widthFix' bindtap='saveImgToPhotosAlbumTap' data-url="{{baseUrl}}xygk/{{item.url}}" src="{{baseUrl}}xygk/{{item.url}}"></image>
+    </block>
+  </view>
+</view>

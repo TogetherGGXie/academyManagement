@@ -23,18 +23,30 @@ page{
 }
 .line{
   position: absolute;
-  width: 458rpx;
-  height: 97rpx;
+  width: 428rpx;
+  height: 90rpx;
   left: 0;
   right: 0;
   margin: auto;
-  top: 250rpx;
+  top: 150rpx;
 }
 .line2{
-  top: 450rpx;
+  top: 300rpx;
 }
 .line3{
-  top: 650rpx;
+  top: 450rpx;
+  display: block
+}
+.line4{
+  top: 600rpx;
+  display: block
+}
+.line5{
+  top: 750rpx;
+  display: block
+}
+.line6{
+  top: 900rpx;
   display: block
 }
 .show{

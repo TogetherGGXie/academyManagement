@@ -1,10 +1,9 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/home/init/init",
     "pages/dbhd/dbhd",
-    "pages/new_jbqk/new_jbqk",
-    "pages/gzyw-detail/gzyw-detail",
+    "pages/xygk/xygk",
+    "pages/news-detail/news-detail",
     "pages/check/check",
     "pages/sign/sign",
     "pages/group/group",
@@ -14,8 +13,8 @@
     "pages/talk/talk",
     "pages/history/history",
     "pages/yjt/yjt",
-    "pages/jyz/jyz",
-    "pages/jyz-detail/jyz-detail",
+    "pages/notice/notice",
+    "pages/notice-detail/notice-detail",
     "pages/record/record",
     "pages/dblz/dblz",
     "pages/dbxx-detail/dbxx-detail",
@@ -36,10 +35,10 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#e65740",
+    "navigationBarBackgroundColor": "#0B66AD",
     "navigationBarTitleText": "学院管理",
     "navigationBarTextStyle": "white",
-    "backgroundColor": "#e65740"
+    "backgroundColor": "#0B66AD"
   },
   "sitemapLocation": "sitemap.json"
 }

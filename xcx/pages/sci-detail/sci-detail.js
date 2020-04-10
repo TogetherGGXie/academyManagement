@@ -1,16 +1,19 @@
 // pages/gzyw-detail/gzyw-detail.js
 var WxParse = require('../../wxParse/wxParse.js');
+var {
+  request
+} = require('../../utils/util.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    newsTime:'2018-05-30',
+    publishTime:'2018-05-30',
     id:0,
-    newsContent:'',
-    newsTitle:'',
-    newsTime:''
+    content:'',
+    title:'',
   },
 
   /**
@@ -28,30 +31,22 @@ Page({
    */
   getDetail: function () {
     var that = this;
-    wx.request({
-      url: 'https://shzj.h5yunban.com/rddb_xcx/webservice.php',
+    request({
+      url: 'sci/getSciInfo',
       data: {
-        _url: "system/getNewsInfo",
-        newsId: that.data.id
+        sciId: that.data.id
       },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      method: 'POST',
-      success: function (result) {
-        var data = result.data.result;
-        if (result.data.status == 200) {
-          that.setData({
-            newsTitle: data.newsTitle,
-            newsTime: data.newsTime,
-            newsContent: data.newsContent
-          });
-          WxParse.wxParse('article', 'html', data.newsContent, that, 36);
-        } else if (result.data.status == 410) {
-
-        }
+    }).then(res => {
+      var data = res.data
+      if (res.status == 200) {
+        that.setData({
+          title: data.title,
+          publishTime: data.publishTime,
+          content: data.content
+        });
+        WxParse.wxParse('article', 'html', data.content, that, 36);
       }
-    });
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

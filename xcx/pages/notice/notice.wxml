@@ -1,7 +1,7 @@
 <!--pages/jyz/jyz.wxml-->
 <view class="page">
   <scroll-view scroll-y style="height: {{height}}px;" bindscrolltolower="lower" scroll-top="{{scrollTop}}">
-    <view class="item" wx:for="{{list}}" wx:for-index="idx" wx:for-item="itemName" data-id="{{itemName.systemId}}" bindtap='turnTo'>
+    <view class="item" wx:for="{{list}}" wx:for-index="idx" wx:for-item="itemName" data-id="{{itemName.noticeId}}" bindtap='turnTo'>
       <view class="book">
         <view class="book-image" style="background-image:url('https://st-file.yunban.cn/20180524/book.png')"></view>
       </view>

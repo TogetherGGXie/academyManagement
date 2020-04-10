@@ -1,0 +1,11 @@
+<!--pages/gzyw-detail/gzyw-detail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="page">
+  <view class="content">
+    <view class="title">{{title}}</view>
+    <view class="grey-text">{{publishTime}}</view>
+    <view class="detail">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  </view>
+</view>
