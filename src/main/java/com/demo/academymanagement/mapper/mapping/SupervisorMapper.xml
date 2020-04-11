@@ -6,11 +6,12 @@
     <resultMap id="BaseResultMap" type="com.demo.academymanagement.modal.Supervisor">
         <id column="sup_id" property="supId" />
         <result column="name" property="name" />
+        <result column="image" property="image" />
         <result column="type" property="type" />
         <result column="surname" property="surname" />
         <result column="stroke" property="stroke" />
         <result column="initials" property="initials" />
-        <result column="priority" property="priority" />
+        <result column="incumbency" property="incumbency" />
         <result column="title" property="title" />
         <result column="education" property="education" />
         <result column="position" property="position" />
@@ -23,5 +24,16 @@
         <result column="create_time" property="createTime" />
         <result column="status" property="status" />
     </resultMap>
+
+    <select id="getSupervisors" resultMap="BaseResultMap">
+        select name,image,sup_id,title from supervisor where
+        <if test="type == 1">
+            department = #{keyword}
+        </if>
+        <if test="type == 2">
+            title = #{keyword}
+        </if>
+        order by initials,stroke
+    </select>
 
 </mapper>

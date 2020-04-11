@@ -22,7 +22,7 @@
     <view class="item" data-url="../notice/notice" bindtap='turnTo'>
       <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon08.png')"></view>
     </view>
-    <view class="long" data-url="../dbxx/dbxx" bindtap='turnTo'>
+    <view class="long" data-url="../szdw/szdw" bindtap='turnTo'>
       <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon07.png')"></view>
     </view>
     <view class="long" data-url="../sci/sci" bindtap='turnTo'>

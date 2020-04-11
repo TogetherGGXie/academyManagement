@@ -21,9 +21,9 @@
     </view>
     <view class="unit">
       <view class="icon" style="background-image: url(https://st-file.yunban.cn/20180524/address.png)"></view>
-      <text decode="{{true}}" class="label">单位地址</text>
+      <text decode="{{true}}" class="label">校、院内任职</text>
       <view class="float-right">
-        <view class="grey-text">{{address != null?address:'无' }}</view>
+        <view class="grey-text">{{incumbency != null?incumbency:'无' }}</view>
       </view>
     </view>
     <view class="unit">

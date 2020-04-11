@@ -1,6 +1,6 @@
 /* pages/dbxx/dbxx.wxss */
 page {
-  background: #e65740;
+  background: #0C72C2;
 }
 .page {
   padding: 1vw 3vw;
@@ -8,7 +8,7 @@ page {
 .tabs {
   width: 96vw;
   display: inline-block;
-  color: #e65740;
+  color: #0C72C2;
   background-color: #fff;
   border-radius: 20px;
 }
@@ -19,15 +19,18 @@ page {
   text-align: center;
   padding: 6px 0vw 6.5px 0vw;
 }
-.zhenTab {
-  font-size: 3vw;
+.subTab {
+  font-size: 2.5vw;
   width: 24vw;
   float: left;
   text-align: center;
   padding: 6px 0vw 6.5px 0vw;
+  overflow:hidden; /*隐藏溢出*/
+  text-overflow:ellipsis;/*当文本溢出包含元素时显示省略符号来代表被修剪的文本*/
+  white-space:nowrap; /*规定段落中的文本不进行换行*/
 }
 .choose {
-  background:linear-gradient(rgb(249,102,100), rgb(250, 130, 110));
+  background:linear-gradient(rgb(70, 161, 234), rgb(70, 161, 234));
   color: #fff;
   border-radius: 20px;
   float: left;

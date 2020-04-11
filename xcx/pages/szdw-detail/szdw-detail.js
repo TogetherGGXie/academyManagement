@@ -1,21 +1,25 @@
 var WxParse = require('../../wxParse/wxParse.js');
+var {
+  request, baseURL
+} = require('../../utils/util.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    headImage: "https://st-file.yunban.cn/20180524/headImage.png",
-    name: "马璟",
+    headImage: baseURL + "icon/default-professor.png",
+    name: "",
     position: "市人大代表",
     job: ["中共党员", "汉族"],
-    unit: "华师大二附中",
-    address: "华东师范大学闵行紫竹基础教育园区",
+    department: "光电信息工程系",
+    incumbency: "无",
     phone: "18273938710",
     id: 0,
     close: true,
     success: false,
-    brief:'',
+    intro:'',
     inputName: null,
     inputPhone: null,
     inputCode: null,
@@ -210,40 +214,26 @@ Page({
   },
   getDetail: function () {
     var that = this;
-    wx.request({
-      url: 'https://shzj.h5yunban.com/rddb_xcx/webservice.php',
+    request({
+      url: 'supervisor/getSupInfo',
       data: {
-        _url: "system/getUserInfoDetail",
-        id: that.data.id
+        supId: that.data.id
       },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      method: 'POST',
-      success: function (result) {
-        var data = result.data.result;
-        if (result.data.status == 200) {
-          that.setData({
-            headImage: data.image,
-            name: data.realName,
-            position: data.position,
-            address: data.unitAddress,
-            brief: data.brief,
-            unit: data.unit,
-            phone: data.phoneNum,
-            level: data.political,
-            userId: data.id
-          });
-          var brief = data.brief;
-          if(data.brief == "" || data.brief == null){
-            brief = "暂无简介信息";
-          }
-          WxParse.wxParse('article', 'html', brief, that, 12);
-        } else if (result.data.status == 410) {
-
-        }
-      }
-    });
+    }).then(res => {
+      var data = res.data
+      that.setData({
+        headImage: data.image == null || data.image == "" ? that.data.headImage : data.image,
+        name: data.name,
+        position: data.position,
+        address: data.unitAddress,
+        intro: data.intro,
+        unit: data.department,
+        phone: data.phoneNum,
+        level: data.political,
+        userId: data.supId
+      });
+    })
+          // WxParse.wxParse('article', 'html', intro, that, 12);
   },
   /**
    * 打开模态框

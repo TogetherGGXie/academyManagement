@@ -28,6 +28,10 @@ public class Supervisor implements Serializable {
      */
     private String name;
     /**
+     * 照片
+     */
+    private String image;
+    /**
      * 类型
      */
     private Integer type;
@@ -43,7 +47,10 @@ public class Supervisor implements Serializable {
      * 姓名首字母（大写）
      */
     private String initials;
-    private String priority;
+    /**
+     * 任职
+     */
+    private String incumbency;
     /**
      * 职称
      */
@@ -140,12 +147,20 @@ public class Supervisor implements Serializable {
         this.initials = initials;
     }
 
-    public String getPriority() {
-        return priority;
+    public String getImage() {
+        return image;
     }
 
-    public void setPriority(String priority) {
-        this.priority = priority;
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getIncumbency() {
+        return incumbency;
+    }
+
+    public void setIncumbency(String incumbency) {
+        this.incumbency = incumbency;
     }
 
     public String getTitle() {
@@ -239,24 +254,25 @@ public class Supervisor implements Serializable {
     @Override
     public String toString() {
         return "Supervisor{" +
-        ", supId=" + supId +
-        ", name=" + name +
-        ", type=" + type +
-        ", surname=" + surname +
-        ", stroke=" + stroke +
-        ", initials=" + initials +
-        ", priority=" + priority +
-        ", title=" + title +
-        ", education=" + education +
-        ", position=" + position +
-        ", department=" + department +
-        ", academy=" + academy +
-        ", phone=" + phone +
-        ", email=" + email +
-        ", intro=" + intro +
-        ", fields=" + fields +
-        ", createTime=" + createTime +
-        ", status=" + status +
-        "}";
+                "supId=" + supId +
+                ", name='" + name + '\'' +
+                ", image='" + image + '\'' +
+                ", type=" + type +
+                ", surname='" + surname + '\'' +
+                ", stroke=" + stroke +
+                ", initials='" + initials + '\'' +
+                ", incumbency='" + incumbency + '\'' +
+                ", title='" + title + '\'' +
+                ", education='" + education + '\'' +
+                ", position='" + position + '\'' +
+                ", department='" + department + '\'' +
+                ", academy='" + academy + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", intro='" + intro + '\'' +
+                ", fields='" + fields + '\'' +
+                ", createTime=" + createTime +
+                ", status=" + status +
+                '}';
     }
 }
