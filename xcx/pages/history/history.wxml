@@ -3,7 +3,7 @@
   <scroll-view scroll-y style="height: {{height}}px;" bindscrolltolower="lower">
     <view class="item" wx:for="{{list}}" wx:key="{{index}}" wx:for-index="idx" wx:for-item="itemName">
       <view class="question">{{itemName.content}}</view>
-      <!-- <view class="tab {{itemName.type == '投诉'?'yellow':'blue'}}">{{itemName.type == '投诉'?'投诉':'建议'}}</view> -->
+      <view class="tab {{itemName.type == '投诉'?'yellow':'blue'}}">{{itemName.type == '投诉'?'投诉':'建议'}}</view>
       <view class="tab blue" wx:if="{{itemName.isShow == '1'}}">精选</view>
       <view class="answer">
         <text>回复</text>

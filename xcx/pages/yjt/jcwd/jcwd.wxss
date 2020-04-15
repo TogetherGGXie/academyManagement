@@ -4,7 +4,7 @@
 .page-container {
   position: relative;
   padding: 5vw;
-  background-color: #e5573f;
+  background-color: #0C72C2;
 }
 
 ::-webkit-scrollbar {

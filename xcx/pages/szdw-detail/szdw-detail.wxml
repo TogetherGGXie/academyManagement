@@ -6,6 +6,9 @@
     <view class="text">
       <view class="name">{{name}}</view>
       <!-- <view class="level">{{position == null?'':position}}</view> -->
+      <view class="fire-text">
+          <view class="diplay-inline grey-text">{{title}}</view>
+      </view>
     </view>
     <view class="btn" bindtap='modalShow'>约见代表</view>
     <image class="lian-left" src="https://st-file.yunban.cn/20180524/lian.png"></image>
@@ -14,16 +17,23 @@
   <view class="content">
     <view class="unit">
       <view class="icon" style="background-image: url(https://st-file.yunban.cn/20180524/build.png)"></view>
-      <text decode="{{true}}" class="label">单位名称</text>
+      <text decode="{{true}}" class="label">院&emsp;&emsp;系</text>
       <view class="float-right">
-        <view class="grey-text">{{unit != null?unit:'无'}}</view>
+        <view class="grey-text">{{department != null?department:'无'}}</view>
+      </view>
+    </view>
+    <view class="unit">
+      <view class="icon" style="background-image: url(https://st-file.yunban.cn/20180524/build.png)"></view>
+      <text decode="{{true}}" class="label">职&emsp;&emsp;务</text>
+      <view class="float-right">
+        <view class="grey-text">{{position != null?position:'无'}}</view>
       </view>
     </view>
     <view class="unit">
       <view class="icon" style="background-image: url(https://st-file.yunban.cn/20180524/address.png)"></view>
-      <text decode="{{true}}" class="label">校、院内任职</text>
+      <text decode="{{true}}" class="label">学&emsp;&emsp;历</text>
       <view class="float-right">
-        <view class="grey-text">{{incumbency != null?incumbency:'无' }}</view>
+        <view class="grey-text">{{education}}</view>
       </view>
     </view>
     <view class="unit">
@@ -37,15 +47,27 @@
       <view class="icon" style="background-image: url(http://shzj.h5yunban.com//uploadsoss/rddb_xcx/2019-11-19/45c1f7b74ce8a77450be4b7fb9a382c0.png)"></view>
       <text decode="{{true}}" class="label">邮&emsp;&emsp;箱</text>
       <view class="float-right">
-        <view class="grey-text" >暂无</view>
+        <view class="grey-text" >{{email != null?email:'暂无'}}</view>
       </view>
     </view>
     <view class="unit">
       <view class="icon" style="background-image: url(https://st-file.yunban.cn/20180524/job.png)"></view>
-      <text decode="{{true}}" class="label">职&emsp;&emsp;务</text>
+      <text decode="{{true}}" class="label">任&emsp;&emsp;职</text>
       <view class="float-right">
-        <view class="grey-text">{{level != null?level:'无'}}</view>
+        <view class="grey-text">{{incumbency != null?incumbency:'无'}}</view>
       </view>
+    </view>
+    <view class="unit">
+      <view class="icon" style="background-image: url(https://st-file.yunban.cn/20180524/job.png)"></view>
+      <text decode="{{true}}" class="label">研究领域</text>
+      <view class="float-right">
+        <view class="grey-text">{{fields != null?fields:'无'}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="detail">
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
     </view>
   </view>
   <view class="bg {{close?'hide':''}}{{success?'hide':''}}"></view>

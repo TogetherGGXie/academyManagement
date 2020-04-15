@@ -7,22 +7,16 @@
     </view>
     <view class="relative">
       <view class="icon" style="background-image:url(https://st-file.yunban.cn/20180524/user.png)"></view>
-      <view class="label">姓名</view>
-      <input placeholder='请输入姓名' bindinput='bindName' focus="{{focus1}}"/>
+      <view class="label">账号</view>
+      <input placeholder='请输入账号' bindinput='bindAccount' focus="{{focus1}}"/>
     </view>
     <view class="relative">
       <view class="icon" style="background-image:url(https://st-file.yunban.cn/20180524/telephone.png)"></view>
-      <view class="label">手机</view>
-      <input placeholder='请输入手机号'  bindinput='bindPhone' focus="{{focus2}}"/>
-    </view>
-    <view class="relative">
-      <view class="icon" style="background-image:url(https://st-file.yunban.cn/20180524/key.png)"></view>
-      <view class="label">验证码</view>
-      <input placeholder='请输入验证码' bindinput='bindCode' focus="{{focus3}}"/>
-      <view class="code {{code && time == 0?'show':''}}" bindtap='getCode'>{{time == 0?'获取验证码':time +'s后重新发送'}}</view>
+      <view class="label">密码</view>
+      <input placeholder='请输入密码'  bindinput='bindPSW' focus="{{focus2}}"/>
     </view>
     <view class="text-center">
-      <view class="btn" bindtap='check'>登录</view>
+      <view class="btn" bindtap='check'>绑定</view>
     </view>
   </view>
 </view>

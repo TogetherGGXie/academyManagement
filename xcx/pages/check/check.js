@@ -1,17 +1,20 @@
 // pages/check/check.js
 var app = getApp();
+var {
+  request, baseURL
+} = require('../../utils/util.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    phone:"",
+    password:"",
     inputCode:'',
     headImage: 'https://st-file.yunban.cn/20180524/wx.png',
     userName: '吉米蛋',
     code: false,
-    name:'',
+    account:'',
     fcous1: false,
     focus2: false,
     focus3: false,
@@ -30,162 +33,148 @@ Page({
           userInfo: res.userInfo,
           res: res
         })
-        that.update();
+        // that.update();
       }
     })
   },
-  update: function () {
-    var that = this;
-    wx.request({
-      url: 'https://shzj.h5yunban.com/rddb_xcx/webservice.php',
-      data: {
-        _url: "user/update",
-        cookiesKey: wx.getStorageSync('cookiesKey'),
-        rawData: that.data.res.rawData,
-        signature: that.data.res.signature
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      method: 'POST',
-      success: function (result) {
-        var data = result.data.result;
-        if (result.data.status == 200) {
-          that.setData({
-            list: data.list
-          });
-        } else if (result.data.status == 410) {
+  // update: function () {
+  //   var that = this;
+  //   wx.request({
+  //     url: 'https://shzj.h5yunban.com/rddb_xcx/webservice.php',
+  //     data: {
+  //       _url: "user/update",
+  //       cookiesKey: wx.getStorageSync('cookiesKey'),
+  //       rawData: that.data.res.rawData,
+  //       signature: that.data.res.signature
+  //     },
+  //     header: {
+  //       'content-type': 'application/json' // 默认值
+  //     },
+  //     method: 'POST',
+  //     success: function (result) {
+  //       var data = result.data.result;
+  //       if (result.data.status == 200) {
+  //         that.setData({
+  //           list: data.list
+  //         });
+  //       } else if (result.data.status == 410) {
 
-        }
-      }
-    });
-  },
+  //       }
+  //     }
+  //   });
+  // },
   bindCode: function(e) {
     this.setData({
       inputCode: e.detail.value
     })
   },
-  bindPhone:function (e) {
+  bindPSW:function (e) {
     var that = this;
     that.setData({
-      phone: e.detail.value
+      password: e.detail.value
     })
-    if (that.data.phone != null && that.data.phone != "") {
-      that.setData({
-        code: true
-      });
-    } else {
-      that.setData({
-        code: false
-      });
-    }
+    // if (that.data.password != null && that.data.password != "") {
+    //   that.setData({
+    //     code: true
+    //   });
+    // } else {
+    //   that.setData({
+    //     code: false
+    //   });
+    // }
   },
-  bindName: function(e) {
+  bindAccount: function(e) {
     this.setData({
-      name: e.detail.value
+      account: e.detail.value
     })
   },
-  getCode: function() {
-    var that = this;
-    if (that.data.phone != null && that.data.phone != "") {
-      if (that.data.time == 0) {
-        wx.request({
-          url: 'https://shzj.h5yunban.com/rddb_xcx/webservice.php',
-          data: {
-            _url: "system/sms",
-            cookiesKey: wx.getStorageSync('cookiesKey'),
-            phone: that.data.phone
-          },
-          header: {
-            'content-type': 'application/json' // 默认值
-          },
-          method: 'POST',
-          success: function (result) {
-            var data = result.data.result;
-            if (result.data.status == 200) {
-              that.setData({
-                time: 60
-              })
-              var init = setInterval(function () {
-                if (that.data.time > 0) {
-                  that.setData({
-                    time: that.data.time - 1
-                  })
-                } else {
-                  clearInterval(init)
-                }
-              }, 1000);
-            } else if (result.data.status == 400) {
-              wx.showModal({
-                title: '温馨提示',
-                content: result.data.message
-              });
-            }
-          }
-        });
-      } else {
-        return;
-      }
-    } else {
-      that.setData({
-        focus2: false
-      })
-    }
-  },
+  // getCode: function() {
+  //   var that = this;
+  //   if (that.data.phone != null && that.data.phone != "") {
+  //     if (that.data.time == 0) {
+  //       wx.request({
+  //         url: 'https://shzj.h5yunban.com/rddb_xcx/webservice.php',
+  //         data: {
+  //           _url: "system/sms",
+  //           cookiesKey: wx.getStorageSync('cookiesKey'),
+  //           phone: that.data.phone
+  //         },
+  //         header: {
+  //           'content-type': 'application/json' // 默认值
+  //         },
+  //         method: 'POST',
+  //         success: function (result) {
+  //           var data = result.data.result;
+  //           if (result.data.status == 200) {
+  //             that.setData({
+  //               time: 60
+  //             })
+  //             var init = setInterval(function () {
+  //               if (that.data.time > 0) {
+  //                 that.setData({
+  //                   time: that.data.time - 1
+  //                 })
+  //               } else {
+  //                 clearInterval(init)
+  //               }
+  //             }, 1000);
+  //           } else if (result.data.status == 400) {
+  //             wx.showModal({
+  //               title: '温馨提示',
+  //               content: result.data.message
+  //             });
+  //           }
+  //         }
+  //       });
+  //     } else {
+  //       return;
+  //     }
+  //   } else {
+  //     that.setData({
+  //       focus2: false
+  //     })
+  //   }
+  // },
   /**
    * 用户绑定微信
    */
   check: function () {
     var that = this;
-    if(that.data.name == null || that.data.name == "") {
+    if (that.data.account == null || that.data.account == "") {
       that.setData({
         focus1: true
       });
       return;
     }
-    if (that.data.phone == null || that.data.phone == "") {
+    if (that.data.password == null || that.data.password == "") {
       that.setData({
         focus2: true
       });
       return;
     }
-    if (that.data.inputCode == null || that.data.inputCode == "") {
-      that.setData({
-        focus3: true
-      });
-      return;
-    }
-    wx.request({
-      url: 'https://shzj.h5yunban.com/rddb_xcx/webservice.php',
+    request({
+      url: 'user/bind',
       data: {
-        _url: "user/bind",
-        cookiesKey: wx.getStorageSync('cookiesKey'),
-        phone: that.data.phone,
-        code: that.data.inputCode
+        account: that.data.account,
+        password: that.data.password
       },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      method: 'POST',
-      success: function (result) {
-        var data = result.data.result;
-        if (result.data.status == 200) {
-          wx.navigateBack();
-        } else if (result.data.status == 400) {
-          wx.showModal({
-            title: '温馨提示',
-            content: result.data.message,
-          })
-        }
+      method: 'post'
+    }).then(res =>{
+      console.log(res)
+      if(res.status != 200) {
+        wx.showModal({
+          title: '温馨提示',
+          content: res.message,
+        })
       }
-    });
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     wx.showToast({
-      title: '请先登录',
+      title: '请先绑定账号',
       image: '../images/warning.png',
       duration: 2000
     })

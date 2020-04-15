@@ -12,14 +12,17 @@ Page({
     headImage: baseURL + "icon/default-professor.png",
     name: "",
     position: "市人大代表",
-    job: ["中共党员", "汉族"],
     department: "光电信息工程系",
     incumbency: "无",
     phone: "18273938710",
+    fields: null,
+    supId: 0,
+    intro: null,
+    title: null,
+    position: null,
     id: 0,
     close: true,
     success: false,
-    intro:'',
     inputName: null,
     inputPhone: null,
     inputCode: null,
@@ -27,7 +30,6 @@ Page({
     focus2: false,
     focus3: false,
     code: false,
-    userId: 0,
     time: 0
   },
   /**
@@ -227,13 +229,18 @@ Page({
         position: data.position,
         address: data.unitAddress,
         intro: data.intro,
-        unit: data.department,
-        phone: data.phoneNum,
-        level: data.political,
-        userId: data.supId
+        department: data.department,
+        phone: data.phone,
+        fields: data.fields,
+        supId: data.supId,
+        education: data.education,
+        incumbency: data.incumbency,
+        title: data.title,
+        email: data.email,
+        position: data.position
       });
+      WxParse.wxParse('article', 'html', data.intro, that, 36);
     })
-          // WxParse.wxParse('article', 'html', intro, that, 12);
   },
   /**
    * 打开模态框

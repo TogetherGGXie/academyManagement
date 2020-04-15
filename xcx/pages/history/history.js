@@ -1,7 +1,9 @@
 // pages/history/history.js
 const app = getApp()
 const util = app.util
-
+var {
+  request, baseURL
+} = require('../../utils/util.js');
 Page({
 
   /**
@@ -9,8 +11,8 @@ Page({
    */
   data: {
     list:[],
-    pn: 1,
-    amount: 1,
+    pageNum: 1,
+    pages: 1,
     height: 0,
     nothing: true
   },
@@ -20,18 +22,20 @@ Page({
   getList: function () {
     let that = this
     let params = {
-      _url: "system/getUserComplaints",
-      cookiesKey: wx.getStorageSync('cookiesKey'),
-      pageNum: that.data.pn
+      url: "complaint/getMyComplaints",
+      data: {
+        page: that.data.pageNum,
+        pageSize: 10
+      }
     }
-    util.request('', params, function (result) {
-      var data = result.result;
-      if (result.status == 200) {
+    request(params).then(res =>{
+      var data = res.data;
+      if(res.status == 200) {
         that.setData({
-          list: that.data.list.concat(data.list),
-          amount: Math.ceil(data.amount / 10)
+          list: that.data.list.concat(data.records),
+          pages: data.pages
         });
-        if (data.list == "" || data.list == null) {
+        if (data.records == "" || data.records == null) {
           that.setData({
             nothing: false
           })
@@ -40,44 +44,9 @@ Page({
             nothing: true
           })
         }
-      } else if (result.status == 410) {
-
       }
+
     })
-
-    // var that = this;
-    // wx.request({
-    //   url: 'https://shzj.h5yunban.com/rddb_xcx/webservice.php',
-    //   data: {
-    //     _url: "system/getComplaints",
-    //     cookiesKey: wx.getStorageSync('cookiesKey'),
-    //     pageNum: that.data.pn
-    //   },
-    //   header: {
-    //     'content-type': 'application/json' // 默认值
-    //   },
-    //   method: 'POST',
-    //   success: function (result) {
-    //     var data = result.data.result;
-    //     if (result.data.status == 200) {
-    //       that.setData({
-    //         list: that.data.list.concat(data.list),
-    //         amount: Math.ceil(data.amount / 10)
-    //       });
-    //       if (data.list == "" || data.list == null) {
-    //         that.setData({
-    //           nothing: false
-    //         })
-    //       } else {
-    //         that.setData({
-    //           nothing: true
-    //         })
-    //       }
-    //     } else if (result.data.status == 410) {
-
-    //     }
-    //   }
-    // });
   },
   /**
    * 生命周期函数--监听页面加载
@@ -98,9 +67,9 @@ Page({
    */
   lower: function () {
     var that = this;
-    if (that.data.pn < that.data.amount) {
+    if (that.data.pageNum < that.data.pages) {
       that.setData({
-        pn: that.data.pn + 1
+        pageNum: that.data.pageNum + 1
       });
       that.getList();
     }

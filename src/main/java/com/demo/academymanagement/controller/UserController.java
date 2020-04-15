@@ -10,12 +10,9 @@ import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.codehaus.xfire.util.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
@@ -44,7 +41,7 @@ import com.demo.academymanagement.util.Result;
  * @author XieZhiyang123
  * @since 2020-03-24
  */
-@Controller
+@RestController
 @RequestMapping("/user")
 public class UserController {
 
@@ -223,6 +220,43 @@ public class UserController {
             e.printStackTrace();
         }
         return null;
+    }
+
+
+    @ApiOperation("是否绑定学号")
+    @GetMapping("/hasBind")
+    public Result hasBind(HttpServletRequest request) {
+        User user = (User) request.getSession().getAttribute("user");
+        HashMap<String, Object> res = userService.hasBind(user.getUserId());
+        return new Result(200, "获取成功", res);
+    }
+
+    @ApiOperation("绑定学号")
+    @PostMapping("/bind")
+    public Result bind(HttpServletRequest request,
+                       @RequestParam(name = "account") String account,
+                       @RequestParam(name = "password") String password) {
+        User user = (User) request.getSession().getAttribute("user");
+        if (user.getStudentId() != null) {
+            return new Result(-1, "已绑定", null);
+        }
+        if (account == null || account == "" || password == null || password == "") {
+            return new Result(400, "请求数据有误", null);
+        }
+        /**
+         * 账号校验部分
+         */
+        user.setStudentId(account);
+        user.setPassword(password);
+        user.setUpdatedAt(new Date());
+        userService.updateById(user);
+        request.getSession().setAttribute("user", user);
+        if (account.length() == 10) {
+            return new Result(200, "获取成功", "student");
+        } else {
+            return new Result(200, "获取成功", "teacher");
+        }
+
     }
 
 }

@@ -101,6 +101,20 @@
 					"pathName": "pages/rddbllz/small-areas/small-areas",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/yjt/home",
+					"pathName": "pages/yjt/yjt",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/home",
+					"pathName": "pages/check/check",
+					"query": "",
+					"scene": null
 				}
 			]
 		}
