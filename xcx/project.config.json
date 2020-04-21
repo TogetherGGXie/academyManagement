@@ -103,9 +103,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/yjt/home",
-					"pathName": "pages/yjt/yjt",
+					"id": 8,
+					"name": "pages/szdw/szdw",
+					"pathName": "pages/hyyy/hyyy",
 					"query": "",
 					"scene": null
 				},
@@ -113,6 +113,20 @@
 					"id": -1,
 					"name": "pages/home/home",
 					"pathName": "pages/check/check",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/dblz/dblz",
+					"pathName": "pages/dblz/dblz",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "pages/hyyy/hyyy",
+					"pathName": "pages/hyyy/hyyy",
 					"query": "",
 					"scene": null
 				}

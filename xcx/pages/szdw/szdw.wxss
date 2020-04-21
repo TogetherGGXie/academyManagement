@@ -86,7 +86,7 @@ page {
   display: inline-block;
 }
 .btn {
-  background:linear-gradient(rgb(249,102,100), rgb(250, 130, 110));
+  background:linear-gradient(rgb(70,161,234), rgb(70, 161, 234));
   display: inline-block;
   position: absolute;
   bottom: 4vw;

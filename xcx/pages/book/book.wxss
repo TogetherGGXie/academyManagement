@@ -1,0 +1,139 @@
+/* pages/dbxx-detail/dbxx-detail.wxss */
+@import "../../wxParse/wxParse.wxss";
+page {
+  background: #0C72C2;
+}
+.page {
+  padding: 1vh 3vw;
+}
+.overflow-hide {
+  height: 98vh;
+  overflow: hidden;
+}
+.text {
+  display: inline-block;
+  position: absolute;
+}
+.content {
+  padding: 6vw 4vw 2vw 4vw;
+  width: 86vw;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-top: 2vw;
+  font-size: 14px;
+}
+
+.grey-text {
+  color: #7e7e7e;
+}
+.diplay-inline {
+  display: inline-block;
+}
+.label {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1px;
+  margin-right: 3vw;
+}
+.unit {
+  position: relative;
+  margin-bottom: 3vw;
+  overflow: hidden;
+  _zoom: 1;
+}
+.float-right {
+  width: 54vw;
+  float: right;
+  right: 0px;
+  top: 0px;
+}
+.text-center {
+  text-align: center;
+}
+.bg {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 6;
+}
+.item {
+  position: relative;
+  margin: 8vw 8vw 2vw 8vw;
+  font-size: 14px;
+  border-bottom: 1.5px solid #e1e1e1;
+}
+.label {
+  font-weight: 600;
+}
+input {
+  margin-top: 6px;
+  padding-bottom: 5px;
+  color: #e65740;
+}
+
+
+.picker {
+  display: inline-block;
+  width:75rpx;
+  margin-left:50rpx;
+}
+
+.bind {
+  display:inline-block;
+  margin-left:27px;
+}
+
+.btn {
+  font-size: 15px;
+  color: #fff;
+  background:linear-gradient(rgb(70,161,234), rgb(70, 161, 234));
+  display: inline-block;
+  border-radius: 20px;
+  padding: 2vw 7vw;
+  margin-top: 4vw;
+  margin-bottom: 4vw;
+  text-align: center;
+  margin-left: 70rpx;
+}
+.clock {
+  position: relative;
+  display: inline-block;
+  background-image: url(https://st-file.yunban.cn/20180524/clock.png);
+  width: 15px;
+  height: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  top: 1vw;
+  margin-right: 2vw;
+}
+.text,.time {
+  display: inline-block;
+  margin-right: 4vw;
+}
+.time {
+  color: #7e7e7e;
+}
+.view {
+  padding: 3vw 6vw 1vw 6vw;
+}
+.scroll {
+  width: 94vw;
+  display: inline-block;
+  padding-top: 3vw;
+}
+.listItem {
+  position: relative;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 14px;
+  padding: 3vw 0px;
+  margin-bottom: 2vw;
+}
+.text1,.time {
+  display: inline-block;
+  margin-right: 4vw;
+}

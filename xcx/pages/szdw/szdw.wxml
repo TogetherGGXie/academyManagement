@@ -14,7 +14,7 @@
         <view class="fire-text">
           <view class="diplay-inline grey-text">{{itemName.title}}</view>
         </view>
-        <view class="btn">约见</view>
+        <view class="btn" wx:if="{{openComment==true}}">评价</view>
       </view>
     </view>
   </scroll-view>

@@ -28,13 +28,13 @@
     <view class="long" data-url="../sci/sci" bindtap='turnTo'>
       <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon03.png')"></view>
     </view>
-    <view class="item" data-url="../dblz/dblz" bindtap='turnTo'>
+    <view class="item" data-url="../hyyy/hyyy" bindtap='turnTo'>
       <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" hover-class="none">
         <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon04.png')"></view>
       </button>
       <view class="suo"></view>
     </view>
-    <view class="item" data-url="../yjt/jcwd/jcwd" bindtap='turnTo'>
+    <view class="item" data-url="../yjzx/yzyj/yzyj" bindtap='turnTo'>
       <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" hover-class="none">
         <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon05.png')"></view>
       </button>

@@ -1,0 +1,46 @@
+<!--pages/dbxx-detail/dbxx-detail.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<view class="page {{close?'':'overflow-hide'}}">
+  <view class="content">
+    <view class="unit">
+      <picker bindchange="pickRoom" mode="selector" value="rIndex" range="{{roomList}}" range-key="{{'name'}}"> 
+        <text decode="{{true}}" class="label">地&emsp;&emsp;点</text>
+        <view class="float-right">
+          <view class="title1">{{name}}</view> 
+        </view>
+      </picker> 
+    </view>
+    <view class="unit">
+      <picker mode="date" start="{{sdate}}" end ="{{edate}}"bindchange="setDate">
+        <text decode="{{true}}" class="label">日&emsp;&emsp;期</text>
+        <view class="float-right">
+            {{date}}
+        </view>
+      </picker>
+    </view>
+    <view class="unit">
+      <text decode="{{true}}" class="label">时&emsp;&emsp;间</text>
+      <picker class='picker' mode="time" start="{{startTime}}" bindchange="setStartTime">{{startTime}}</picker>
+      <view class="bind">至</view>
+      <picker class='picker' mode="time" start="{{startTime}}" bindchange="setEndTime">{{endTime}}</picker>
+    </view>
+    <view class="btn" bindtap='getBookings'>查看预约情况</view>
+    <view class="btn" bindtap='book'>预约</view>
+  </view>
+  <view class="scroll">
+    <scroll-view scroll-y style="height: 300px;" bindscrolltolower="lower">
+      <view class="listItem"  wx:for="{{list}}" wx:for-index="idx" wx:for-item="itemName">
+        <view class="view">
+          <view class="clock"></view>
+          <view class="text1">开始时间</view>
+          <view class="time">{{itemName.startTime}}</view>
+        </view>
+        <view class="view">
+          <view class="clock"></view>
+          <view class="text1">结束时间</view>
+          <view class="time">{{itemName.endTime}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

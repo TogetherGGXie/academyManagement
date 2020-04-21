@@ -20,7 +20,8 @@ Page({
     height: 0,
     nothing: true,
     showSubTabs: true,
-    keyword: '光电信息工程系'
+    keyword: '光电信息工程系',
+    openComment: false,
   },
 
   /**
@@ -35,7 +36,9 @@ Page({
         })
       }
     })
-    this.getList();
+    // this.isOpenComment();
+    // this.getList();
+    that.check();
   },
   /**
    * 跳转详情页
@@ -43,6 +46,36 @@ Page({
   turnTo: function (e) {
     wx.navigateTo({
       url: '../szdw-detail/szdw-detail?id=' + e.currentTarget.dataset.id,
+    })
+  },
+  check: function () {
+    var that = this;
+    request({
+      url: "user/hasBind",
+    }).then(res => {
+      if (res.status == 200) {
+        console.log(111)
+        if (res.data.identity != 'student') {
+          that.setData({
+            openComment: false
+          })
+        } else {
+          that.isOpenComment();
+        }
+      }
+      that.getList();
+    });
+  },
+  isOpenComment: function() {
+    var that = this;
+    request({
+      url: 'commentTime/isOpenComment'
+    }).then(res=> {
+      if(res.data == true) {
+        that.setData({
+          openComment: true
+        })
+      }
     })
   },
   /**
@@ -62,7 +95,7 @@ Page({
       var data = res.data
       for (var i = 0; i < data.records.length; i++) {
         var listIndex = data.records[i];
-        var image = (listIndex.image == null || listIndex.image == '') ? baseURL + 'icon/default-professor.png' : listIndex.image;
+        var image = (listIndex.image == null || listIndex.image == '') ? baseURL + 'icon/default-professor.jpg' : listIndex.image;
         listIndex.image = image;
       }
       that.setData({

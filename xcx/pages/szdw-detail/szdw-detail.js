@@ -2,14 +2,14 @@ var WxParse = require('../../wxParse/wxParse.js');
 var {
   request, baseURL
 } = require('../../utils/util.js');
-
+let commenting = false
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    headImage: baseURL + "icon/default-professor.png",
+    headImage: baseURL + "icon/default-professor.jpg",
     name: "",
     position: "市人大代表",
     department: "光电信息工程系",
@@ -30,175 +30,29 @@ Page({
     focus2: false,
     focus3: false,
     code: false,
-    time: 0
+    time: 0,
+    openComment:false,
+    showCommentPage: false,
+    commentDegree: '',
+    commentValue: '',
+    showCommentBtn: true,
   },
   /**
-   * 发送短信
+   * 是否开启评价通道
    */
-  getCode: function () {
+  isOpenComment: function () {
     var that = this;
-    if (that.data.inputPhone == null || that.data.inputPhone == "") {
-      that.setData({
-        focus2: true 
-      });
-      return;
-    } 
-    if (!that.data.inputPhone.match(/^[1][3,4,5,7,8][0-9]{9}$/)) {
-      wx.showModal({
-        title: '温馨提示',
-        content: '手机号码有误，请重新输入!',
-        showCancel: false,
-        success(res) { }
-      })
-      return
-    }
-    if(that.data.time == 0) {
-      that.setData({
-        time: 60
-      })
-      var init = setInterval(function () {
-        if(that.data.time > 0) {
-          that.setData({
-            time: that.data.time - 1
-          })
-        } else {
-          clearInterval(init)
-        }
-      }, 1000);
-    } else {
-      return;
-    }
-    wx.request({
-      url: 'https://shzj.h5yunban.com/rddb_xcx/webservice.php',
-      data: {
-        _url: "system/orderSms",
-        cookiesKey: wx.getStorageSync('cookiesKey'),
-        phone: that.data.inputPhone
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      method: 'POST',
-      success: function (result) {
-        var data = result.data.result;
-        if (result.data.status == 200) {
-          
-        } else if (result.data.status == 400) {
-          wx.showModal({
-            title: '温馨提示：',
-            content: result.data.message,
-            showCancel: false
-          })
-        }
+    request({
+      url: 'commentTime/isOpenComment'
+    }).then(res => {
+      if (res.data == true) {
+        that.setData({
+          openComment: true
+        })
       }
-    });
-  },
-  /**
-   * 判断验证码是否可点
-   */
-  checkCode: function () {
-    var that = this;
-    if (that.data.inputPhone != null && that.data.inputPhone != "") {
-      that.setData({
-        code: true
-      });
-    } else {
-      that.setData({
-        code: false
-      });
-    }
-  },
-  /**
-   * 提交信息
-   */
-  submit: function () {
-    var that = this;
-    // that.setData({
-    //   close: true,
-    //   success: true
-    // });
-    // return
-    if (that.data.inputName == null || that.data.inputName == "") {
-      that.setData({
-        focus1: true
-      });
-      return;
-    }
-    if (that.data.inputPhone == null || that.data.inputPhone == "") {
-      that.setData({
-        focus2: true
-      });
-      return;
-    }
-    if (that.data.inputCode == null || that.data.inputCode == "") {
-      that.setData({
-        focus3: true
-      });
-      return;
-    }
-    wx.request({
-      url: 'https://shzj.h5yunban.com/rddb_xcx/webservice.php',
-      data: {
-        _url: "system/createOrder",
-        cookiesKey: wx.getStorageSync('cookiesKey'),
-        phone: that.data.inputPhone,
-        realName: that.data.inputName,
-        userInfoId: that.data.userId,
-        code: that.data.inputCode
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      method: 'POST',
-      success: function (result) {
-        var data = result.data.result;
-        if (result.data.status == 200) {
-          that.setData({
-            close: true,
-            success: true
-          });
-        } else if (result.data.status == 400) {
-          wx.showModal({
-            title: '温馨提示',
-            content: result.data.message,
-            showCancel: false
-          })
-        } else {
-          wx.showModal({
-            title: '温馨提示',
-            content: result.data.message,
-            showCancel: false
-          })
-        }
-      }
-    });
-    
-  },
-  bindCode: function (e) {
-    this.setData({
-      inputCode: e.detail.value
     })
   },
-  bindPhone: function (e) {
-    var that = this;
-    that.setData({
-      inputPhone: e.detail.value
-    })
-    if (that.data.inputPhone != null && that.data.inputPhone != "") {
-      that.setData({
-        code: true
-      });
-    } else {
-      that.setData({
-        code: false
-      });
-    }
-  },
-  bindName: function (e) {
-    this.setData({
-      inputName: e.detail.value
-    })
-  },
+
   know: function () {
     this.setData({
       close: true,
@@ -212,7 +66,24 @@ Page({
     this.setData({
       id: options.id
     });
-    this.getDetail();
+    this.check()
+  },
+  check: function () {
+    var that = this;
+    request({
+      url: "user/hasBind",
+    }).then(res => {
+      if (res.status == 200) {
+        if (res.data.identity == 'teacher') {
+          that.setData({
+            openComment: false
+          })
+        } else {
+          that.isOpenComment();
+        }
+      }
+      that.getDetail();
+    });
   },
   getDetail: function () {
     var that = this;
@@ -227,7 +98,6 @@ Page({
         headImage: data.image == null || data.image == "" ? that.data.headImage : data.image,
         name: data.name,
         position: data.position,
-        address: data.unitAddress,
         intro: data.intro,
         department: data.department,
         phone: data.phone,
@@ -266,13 +136,101 @@ Page({
       id: e.currentTarget.dataset.id
     });
   },
-  phoneCall: function (e) {
-    wx.makePhoneCall({
-      phoneNumber: e.currentTarget.dataset.replyPhone,
-      success: function () {
-      },
+  toComment(e) {
+    var that = this;
+    request({
+      url: "user/hasBind",
+    }).then(res => {
+      if(res.data.res == false) {
+        wx.showToast({
+          title: '请先绑定账号',
+          icon: 'none',
+          duration: 1000,
+          success: function () {
+            setTimeout(function () {
+              wx.navigateTo({
+                url: '../ check / check',
+              })
+            }, 1000);
+          }
+        })
+      }else if(res.data.identity == 'student'){
+        this.setData({
+          showCommentPage: true,
+          commentDegree: '',
+          commentValue: '',
+          showCommentBtn: true
+        })
+      } else {
+        wx.showToast({
+          title: '教师无法进行评论',
+          icon: 'none',
+          duration: 2000
+        })
+      }
     })
   },
+
+  closeCommentPage(e) {
+    this.setData({
+      showCommentPage: false
+    })
+  },
+
+  selectComment(e) {
+    // console.log(e)
+    let value = e.currentTarget.dataset.value
+    this.setData({
+      commentDegree: value
+    })
+    console.log(this.data.commentDegree)
+  },
+
+  bindCommentInput(e) {
+    this.setData({
+      commentValue: e.detail.value
+    })
+    console.log(e)
+  },
+
+  submitComment(e) {
+    var that = this;
+    if (!this.data.commentDegree) {
+      wx.showModal({
+        title: '温馨提示',
+        content: '请先进行评价',
+        showCancel: false
+      })
+      return
+    }
+    let params = {
+      url: 'comment/comment',
+      data: {
+        content: that.data.commentValue,
+        score: that.data.commentDegree,
+        supId: that.data.id
+      },
+      method: 'post'
+    }
+    if (commenting) return
+    commenting = true
+    setTimeout(() => {
+      commenting = false
+    }, 2000)
+    request(params).then(res =>{
+      commenting = false
+      that.setData({
+        commentDegree: '',
+        commentValue: '',
+        showCommentPage: false
+      })
+      wx.showToast({
+        title: '评价成功',
+        icon: 'success'
+      })
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -10,7 +10,7 @@
           <view class="diplay-inline grey-text">{{title}}</view>
       </view>
     </view>
-    <view class="btn" bindtap='modalShow'>约见代表</view>
+    <view class="btn" bindtap='toComment' wx:if="{{openComment}}">评价</view>
     <image class="lian-left" src="https://st-file.yunban.cn/20180524/lian.png"></image>
     <image class="lian-right" src="https://st-file.yunban.cn/20180524/lian.png"></image>
   </view>
@@ -70,34 +70,29 @@
       <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
     </view>
   </view>
-  <view class="bg {{close?'hide':''}}{{success?'hide':''}}"></view>
-  <view class="frame {{close?'hide':''}}">
-    <view class="item {{id == 1?'focus':''}}">
-      <view class="label">姓名</view>
-      <input placeholder='请输入您的姓名' data-id="1" bindfocus="bindfocus" bindinput="bindName" focus="{{focus1}}"/>
-    </view>
-    <view class="item {{id == 2?'focus':''}}">
-      <view class="label">手机号</view>
-      <input type="number" placeholder='请输入您的手机号' data-id="2" bindfocus="bindfocus" bindinput="bindPhone" focus="{{focus2}}"/>
-    </view>
-    <view class="item {{id == 3?'focus':''}}">
-      <view class="label">验证码</view>
-      <input type="number" class="code-input" placeholder='请输入验证码' data-id="3" bindfocus="bindfocus" bindinput="bindCode" focus="{{focus3}}"/>
-      <view class="code {{code && time == 0?'show':''}}" bindtap='getCode'>{{time == 0?'获取验证码':time +'s后重新发送'}}</view>
-    </view>
-    <view class="text-center">
-      <view class="submit" bindtap='submit'>
-        提交
+
+  <!-- 评价页 -->
+  <view class="commentPage" wx:if="{{showCommentPage}}">
+    <view class="main">
+      <image class="title-circle" mode="aspectFill" src="{{headImage}}"></image>
+      <text class="name">{{name}}</text>
+      <text class="desc1">您的建议让我们做的更好</text>
+      <view class="desc2" hidden="{{!showCommentBtn}}">请对教师进行评价并选填写理由</view>
+      <text class="desc2">请选择满意程度</text>
+      <view class="star-box flex-row-between-center">
+        <view class="one flex-row-center-center {{commentDegree === '1' ? 'selected':''}}" bindtap="{{showCommentBtn ? 'selectComment':''}}" data-value="1">1</view>
+        <view class="one flex-row-center-center {{commentDegree === '2' ? 'selected':''}}" bindtap="{{showCommentBtn ? 'selectComment':''}}" data-value="2">2</view>
+        <view class="one flex-row-center-center {{commentDegree === '3' ? 'selected':''}}" bindtap="{{showCommentBtn ? 'selectComment':''}}" data-value="3">3</view>
+                <view class="one flex-row-center-center {{commentDegree === '4' ? 'selected':''}}" bindtap="{{showCommentBtn ? 'selectComment':''}}" data-value="4">4</view>
+        <view class="one flex-row-center-center {{commentDegree === '5' ? 'selected':''}}" bindtap="{{showCommentBtn ? 'selectComment':''}}" data-value="5">5</view>
       </view>
-    </view>
-    <view class="close" bindtap='close'></view>
-  </view>
-  <view class="success {{success?'':'hide'}}">
-    <view class="success-image"></view>
-    <!-- <view>{{name}}在{{address}}等你!</view> -->
-    <view>您的申请已受理，我们将根据代表时间合理安排您的约见，谢谢！</view>
-    <view class="text-center">
-      <view class="submit" bindtap='know'>知道了</view>
+      <view class="comment-box">
+        <textarea class="comment-value" placeholder="添加理由..." bindinput="bindCommentInput" bindfocus="bindTextfocus" bindblur="bindblur" value="{{commentValue}}" hidden="{{!showCommentBtn}}"></textarea>
+        <view class="comment-value" hidden="{{showCommentBtn}}">{{commentValue}}</view>
+      </view>
+      <view class="btn-main" bindtap="submitComment" hidden="{{!showCommentBtn}}">提交评价</view>
+      <image class="close" mode="widthFix" src="/pages/images/llz_close.png" bindtap="closeCommentPage"></image>
     </view>
   </view>
+  
 </view>

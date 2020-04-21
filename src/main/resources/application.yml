@@ -5,7 +5,7 @@ spring:
     active: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost/academy_management?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://localhost/academy_management?useSSL=false&serverTimezone=GMT%2B8
     username: root
     password: root
   mvc:
