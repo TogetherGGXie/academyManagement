@@ -47,58 +47,9 @@
 			"current": -1,
 			"list": [
 				{
-					"id": -1,
-					"name": "代表之家",
-					"pathName": "pages/dbzj/dbzj",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "人大代表联络站-list",
-					"pathName": "pages/rddbllz/list/list",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "人大代表联络站-detail",
-					"pathName": "pages/rddbllz/detail/detail",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "人大代表联络站-五大选区",
-					"pathName": "pages/rddbllz/rddbllz",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "人大代表联络站-约见记录",
-					"pathName": "pages/rddbllz/record/record",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "一键通-精彩问答",
-					"pathName": "pages/yjt/jcwd/jcwd",
-					"query": "",
-					"scene": null
-				},
-				{
 					"id": 6,
 					"name": "pages/home/init/init",
 					"pathName": "pages/home/init/init",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "联络站中间页-小选区",
-					"pathName": "pages/rddbllz/small-areas/small-areas",
 					"query": "",
 					"scene": null
 				},
@@ -127,6 +78,20 @@
 					"id": 11,
 					"name": "pages/hyyy/hyyy",
 					"pathName": "pages/hyyy/hyyy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/check/home",
+					"pathName": "pages/check/check",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/notice/notice",
+					"pathName": "pages/notice/notice",
 					"query": "",
 					"scene": null
 				}

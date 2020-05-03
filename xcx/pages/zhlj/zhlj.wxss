@@ -1,6 +1,6 @@
 /* pages/zhlj/zhlj.wxss */
 page {
-  background: #e65740;
+  background: #0C72C2;
 }
 .page {
   padding: 1vw 3vw;

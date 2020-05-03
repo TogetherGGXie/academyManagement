@@ -40,17 +40,27 @@ public class NoticeController {
     @GetMapping("/getNotices")
     public Result getNotice(HttpServletRequest request,
                           @RequestParam(value = "page", required = false) Integer page,
-                          @RequestParam(value = "pageSize", required = false) Integer pageSize) {
+                          @RequestParam(value = "pageSize", required = false) Integer pageSize,
+                          @RequestParam(value = "type") Integer type,
+                          @RequestParam(value = "isLimit") Integer isLimit) {
         if (page == null) {
             page = 1;
         }
         if (pageSize == null) {
             pageSize = 5;
         }
-        Page records = noticeService.selectPage(new Page<>(page, pageSize),
-                new EntityWrapper<Notice>().setSqlSelect("notice_id, type, title, content, url, publish_time, create_time, image_url")
-                        .eq("status", 1).
-                        orderDesc(Arrays.asList(new String[] {"publish_time"})));
+        Page records = new Page<>(page, pageSize);
+        if (isLimit == 0) {
+            records = noticeService.selectPage(new Page<>(page, pageSize),
+                    new EntityWrapper<Notice>().setSqlSelect("notice_id, type, title, content, url, publish_time, create_time, image_url")
+                            .eq("status", 1).eq("type", type).eq("is_limit", isLimit)
+                            .orderDesc(Arrays.asList(new String[] {"publish_time"})));
+        } else {
+            records = noticeService.selectPage(new Page<>(page, pageSize),
+                    new EntityWrapper<Notice>().setSqlSelect("notice_id, type, title, content, url, publish_time, create_time, image_url")
+                            .eq("status", 1).eq("type", type)
+                            .orderDesc(Arrays.asList(new String[] {"publish_time"})));
+        }
         return new Result(200, "获取公告成功", records);
     }
 

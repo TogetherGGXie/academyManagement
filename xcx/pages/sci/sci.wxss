@@ -26,7 +26,7 @@ page {
   text-align: center;
 }
 .tab.choose {
-  color: #e65740;
+  color: #0B66AD;
   background-color: #fff;
 }
 .choose:after {
@@ -98,7 +98,7 @@ page {
 }
 .nothing {
   position: absolute;
-  background-image: url(https://st-file.yunban.cn/20180524/nothing.png);
+  background-image: url(49.235.215.80:8999/icon/nothing.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;

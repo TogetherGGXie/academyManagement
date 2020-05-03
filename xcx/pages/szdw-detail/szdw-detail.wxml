@@ -11,8 +11,8 @@
       </view>
     </view>
     <view class="btn" bindtap='toComment' wx:if="{{openComment}}">评价</view>
-    <image class="lian-left" src="https://st-file.yunban.cn/20180524/lian.png"></image>
-    <image class="lian-right" src="https://st-file.yunban.cn/20180524/lian.png"></image>
+    <!-- <image class="lian-left" src="https://st-file.yunban.cn/20180524/lian.png"></image>
+    <image class="lian-right" src="https://st-file.yunban.cn/20180524/lian.png"></image> -->
   </view>
   <view class="content">
     <view class="unit">

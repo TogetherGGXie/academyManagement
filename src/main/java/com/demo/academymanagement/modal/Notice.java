@@ -39,6 +39,11 @@ public class Notice implements Serializable {
      */
     private String content;
     /**
+     * 是否限制
+     */
+    @TableField("is_limit")
+    private Integer isLimit;
+        /**
      * 链接
      */
     private String url;
@@ -134,18 +139,27 @@ public class Notice implements Serializable {
         this.imageUrl = imageUrl;
     }
 
+    public Integer getIsLimit() {
+        return isLimit;
+    }
+
+    public void setIsLimit(Integer isLimit) {
+        this.isLimit = isLimit;
+    }
+
     @Override
     public String toString() {
         return "Notice{" +
-        ", noticeId=" + noticeId +
-        ", type=" + type +
-        ", title=" + title +
-        ", content=" + content +
-        ", url=" + url +
-        ", publishTime=" + publishTime +
-        ", status=" + status +
-        ", createTime=" + createTime +
-        ", imageUrl=" + imageUrl +
-        "}";
+                "noticeId=" + noticeId +
+                ", type=" + type +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", isLimit=" + isLimit +
+                ", url='" + url + '\'' +
+                ", publishTime=" + publishTime +
+                ", status=" + status +
+                ", createTime=" + createTime +
+                ", imageUrl='" + imageUrl + '\'' +
+                '}';
     }
 }

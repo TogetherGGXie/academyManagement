@@ -11,8 +11,8 @@ Page({
   data: {
     password:"",
     inputCode:'',
-    headImage: 'https://st-file.yunban.cn/20180524/wx.png',
-    userName: '吉米蛋',
+    headImage: '',
+    userName: '',
     code: false,
     account:'',
     fcous1: false,
@@ -37,32 +37,7 @@ Page({
       }
     })
   },
-  // update: function () {
-  //   var that = this;
-  //   wx.request({
-  //     url: 'https://shzj.h5yunban.com/rddb_xcx/webservice.php',
-  //     data: {
-  //       _url: "user/update",
-  //       cookiesKey: wx.getStorageSync('cookiesKey'),
-  //       rawData: that.data.res.rawData,
-  //       signature: that.data.res.signature
-  //     },
-  //     header: {
-  //       'content-type': 'application/json' // 默认值
-  //     },
-  //     method: 'POST',
-  //     success: function (result) {
-  //       var data = result.data.result;
-  //       if (result.data.status == 200) {
-  //         that.setData({
-  //           list: data.list
-  //         });
-  //       } else if (result.data.status == 410) {
-
-  //       }
-  //     }
-  //   });
-  // },
+  
   bindCode: function(e) {
     this.setData({
       inputCode: e.detail.value
@@ -73,68 +48,14 @@ Page({
     that.setData({
       password: e.detail.value
     })
-    // if (that.data.password != null && that.data.password != "") {
-    //   that.setData({
-    //     code: true
-    //   });
-    // } else {
-    //   that.setData({
-    //     code: false
-    //   });
-    // }
+    
   },
   bindAccount: function(e) {
     this.setData({
       account: e.detail.value
     })
   },
-  // getCode: function() {
-  //   var that = this;
-  //   if (that.data.phone != null && that.data.phone != "") {
-  //     if (that.data.time == 0) {
-  //       wx.request({
-  //         url: 'https://shzj.h5yunban.com/rddb_xcx/webservice.php',
-  //         data: {
-  //           _url: "system/sms",
-  //           cookiesKey: wx.getStorageSync('cookiesKey'),
-  //           phone: that.data.phone
-  //         },
-  //         header: {
-  //           'content-type': 'application/json' // 默认值
-  //         },
-  //         method: 'POST',
-  //         success: function (result) {
-  //           var data = result.data.result;
-  //           if (result.data.status == 200) {
-  //             that.setData({
-  //               time: 60
-  //             })
-  //             var init = setInterval(function () {
-  //               if (that.data.time > 0) {
-  //                 that.setData({
-  //                   time: that.data.time - 1
-  //                 })
-  //               } else {
-  //                 clearInterval(init)
-  //               }
-  //             }, 1000);
-  //           } else if (result.data.status == 400) {
-  //             wx.showModal({
-  //               title: '温馨提示',
-  //               content: result.data.message
-  //             });
-  //           }
-  //         }
-  //       });
-  //     } else {
-  //       return;
-  //     }
-  //   } else {
-  //     that.setData({
-  //       focus2: false
-  //     })
-  //   }
-  // },
+
   /**
    * 用户绑定微信
    */

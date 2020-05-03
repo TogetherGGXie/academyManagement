@@ -97,5 +97,5 @@
   color: #fff;
   font-size: 30rpx;
   border-radius: 20rpx;
-  background: linear-gradient(#fea695, #f96865);
+  background: linear-gradient(#45A5EF, #3399FF);
 }

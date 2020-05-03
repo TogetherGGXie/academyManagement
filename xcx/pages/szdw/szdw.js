@@ -95,7 +95,7 @@ Page({
       var data = res.data
       for (var i = 0; i < data.records.length; i++) {
         var listIndex = data.records[i];
-        var image = (listIndex.image == null || listIndex.image == '') ? baseURL + 'icon/default-professor.jpg' : listIndex.image;
+        var image = (listIndex.image == null || listIndex.image == '') ? baseURL + 'icons/default-professor.jpg' : listIndex.image;
         listIndex.image = image;
       }
       that.setData({

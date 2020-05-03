@@ -52,7 +52,7 @@ page {
 }
 .btn {
   position: absolute;
-  background: linear-gradient(rgb(249,102,100), rgb(250, 130, 110));
+  background: linear-gradient(rgb(70,161,234), rgb(70,161,234));
   color: #fff;
   font-size: 15px;
   border-radius: 20px;
@@ -165,7 +165,7 @@ input {
 .submit {
   font-size: 16px;
   color:  #fff;
-  background: linear-gradient(rgb(249,102,100), rgb(250, 130, 110));
+  background: linear-gradient(rgb(70,161,234), rgb(250, 130, 110));
   display: inline-block;
   padding: 1vw 15vw 1.5vw 15vw;
   border-radius: 20px;
@@ -316,7 +316,7 @@ input {
 }
 
 .one.selected {
-  background-color: rgb(249,102,100);
+  background-color: rgb(70,161,234);
 }
 
 .star-box image {
@@ -350,7 +350,7 @@ input {
   font-size: 30rpx;
   border-radius: 10px;
   text-align: center;
-  background: linear-gradient(rgb(249,102,100), rgb(250, 130, 110));
+  background: linear-gradient(rgb(70,161,234), rgb(70,161,234));
 }
 
 .close {

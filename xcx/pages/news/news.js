@@ -52,6 +52,11 @@ Page({
       },
     }).then(res => {
       var data = res.data
+      for (var i = 0; i < data.records.length; i++) {
+        var listIndex = data.records[i];
+        var time = (listIndex.newsTime).split(" ")[0];
+        listIndex.newsTime = time;
+      }
       that.setData({
         list: that.data.list.concat(data.records),
         pages: data.pages

@@ -10,9 +10,29 @@
         <result column="article_image" property="articleImage" />
         <result column="brief" property="brief" />
         <result column="content" property="content" />
+        <result column="is_limit" property="isLimit" />
         <result column="publish_time" property="publishTime" />
         <result column="status" property="status" />
         <result column="create_time" property="createTime" />
     </resultMap>
+
+    <select id="getSciList" resultMap="BaseResultMap">
+        select article_id, type, title, article_image, brief, content, publish_time from news where
+        status = 1
+        <if test="type != null">
+            and type = #{type}
+        </if>
+        <if test="keyword != null">
+            <bind name = "keyword" value="'%' + keyword + '%'"></bind>
+            and title like #{keyword}
+        </if>
+        <if test="startTime != null">
+            and create_time &gt; #{startTime}
+        </if>
+        <if test="endTime != null">
+            and create_time &lt; #{endTime}
+        </if>
+        order by create_time desc
+    </select>
 
 </mapper>

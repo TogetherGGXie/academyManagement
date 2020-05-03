@@ -9,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    headImage: baseURL + "icon/default-professor.jpg",
+    headImage: baseURL + "icons/default-professor.jpg",
     name: "",
     position: "市人大代表",
     department: "光电信息工程系",

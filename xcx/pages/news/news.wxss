@@ -26,7 +26,7 @@ page {
   text-align: center;
 }
 .tab.choose {
-  color: #e65740;
+  color: #0B66AD;
   background-color: #fff;
 }
 .choose:after {

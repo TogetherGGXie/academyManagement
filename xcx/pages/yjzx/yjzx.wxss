@@ -50,7 +50,7 @@ text {
   margin-right: 8vw;
 }
 .choosed .radio {
-  border: 1px solid #f96664;
+  border: 1px solid #43A1EA;
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -62,7 +62,7 @@ text {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #f96664;
+  background-color: #43A1EA;
   top: 2px;
   left: 2px;
 }
@@ -97,7 +97,7 @@ textarea {
 }
 .btn {
   position: relative;
-  background: linear-gradient(rgb(250, 130, 110), rgb(249,102,100));
+  background: linear-gradient(#45A5EF, #3399FF);
   color: #fff;
   font-size: 15px;
   border-radius: 20px;

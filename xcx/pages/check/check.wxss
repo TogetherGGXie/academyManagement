@@ -55,7 +55,7 @@ input {
 .btn {
   font-size: 15px;
   color: #fff;
-  background: linear-gradient(rgb(249,141,102), rgb(230, 87, 64));
+  background: linear-gradient(rgb(70,161,234), rgb(70,161,234));
   display: inline-block;
   border-radius: 20px;
   padding: 2vw 14vw;

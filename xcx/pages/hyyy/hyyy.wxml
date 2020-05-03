@@ -2,7 +2,7 @@
 <view class="page">
   <navigator url='../yyls/yyls' hover-class='none'>
     <view class="item">
-      <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/clock.png')"></view>
+      <view class="icon" style="background-image:url('{{baseUrl}}/icons/history.png')"></view>
       <view>历史记录</view>
       <view class="arrow"></view>
     </view>
@@ -17,7 +17,7 @@
   </navigator> -->
   <navigator url='../book/book' hover-class='none'>
     <view class="item">
-      <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/day.png')"></view>
+      <view class="icon" style="background-image:url('{{baseUrl}}/icons/meeting.png')"></view>
       <view>会议预约</view>
       <view class="arrow"></view>
     </view>

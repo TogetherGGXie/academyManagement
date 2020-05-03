@@ -2,7 +2,7 @@
 <view class="page">
   <view class="choose">
     <view class='title-box'>
-      <image mode="widthFix" src="/pages/images/wd_icon_title.png"></image>
+      <image mode="widthFix" src="{{baseUrl}}/icons/yzyj.png"></image>
        <text>提问</text>
     </view>
     <view class="{{id == 1?'choosed':'no'}}" data-id="1" bindtap="choose">
@@ -13,8 +13,8 @@
       <view class="radio"></view>
       <text>建议</text>
     </view>
-    <image class="lian-left" src="https://st-file.yunban.cn/20180524/lian.png"></image>
-    <image class="lian-right" src="https://st-file.yunban.cn/20180524/lian.png"></image>
+    <!-- <image class="lian-left" src="../../image/icons/lian.png"></image>
+    <image class="lian-right" src="../../image/icons/lian.png"></image> -->
   </view>
   <view class="content">
     <textarea placeholder='请输入您的问题' bindinput='bindInput' value="{{content}}" focus="{{focus}}"></textarea>

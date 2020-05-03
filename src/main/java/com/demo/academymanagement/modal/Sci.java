@@ -47,6 +47,20 @@ public class Sci implements Serializable {
      * 内容
      */
     private String content;
+
+    public Integer getIsLimit() {
+        return isLimit;
+    }
+
+    public void setIsLimit(Integer isLimit) {
+        this.isLimit = isLimit;
+    }
+
+    /**
+     * 是否限制
+     */
+    @TableField("is_limit")
+    private Integer isLimit;
     /**
      * 发布时间
      */
@@ -135,6 +149,7 @@ public class Sci implements Serializable {
                 ", articleImage='" + articleImage + '\'' +
                 ", brief='" + brief + '\'' +
                 ", content='" + content + '\'' +
+                ", isLimit=" + isLimit +
                 ", publishTime=" + publishTime +
                 ", status=" + status +
                 ", createTime=" + createTime +

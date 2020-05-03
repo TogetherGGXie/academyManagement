@@ -1,7 +1,10 @@
 package com.demo.academymanagement.service;
 
+import com.baomidou.mybatisplus.plugins.Page;
 import com.demo.academymanagement.modal.Notice;
 import com.baomidou.mybatisplus.service.IService;
+
+import java.util.HashMap;
 
 /**
  * <p>
@@ -12,5 +15,5 @@ import com.baomidou.mybatisplus.service.IService;
  * @since 2020-03-24
  */
 public interface NoticeService extends IService<Notice> {
-
+    Page<HashMap<String, Object>> getNoticeList(Page<HashMap<String, Object>> page, String Keyword, String startTime, String endTIme);
 }

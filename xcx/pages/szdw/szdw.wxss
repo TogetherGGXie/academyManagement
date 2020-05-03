@@ -98,7 +98,7 @@ page {
 }
 .nothing {
   position: absolute;
-  background-image: url(https://st-file.yunban.cn/20180524/nothing.png);
+  background-image: url(../../image/nothing.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;

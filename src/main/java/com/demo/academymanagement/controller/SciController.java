@@ -47,7 +47,8 @@ public class SciController {
     public Result getSci(HttpServletRequest request,
                           @RequestParam(value = "page", required = false) Integer page,
                           @RequestParam(value = "pageSize", required = false) Integer pageSize,
-                          @RequestParam(value = "type", required = true) Integer type) {
+                          @RequestParam(value = "type", required = true) Integer type,
+                          @RequestParam(value = "isLimit") Integer isLimit) {
         if (page == null) {
             page = 1;
         }
@@ -57,10 +58,18 @@ public class SciController {
         if (type == null) {
             return new Result(400, "请求参数有误，请稍后重试", null);
         }
-        Page records = sciService.selectPage(new Page<>(page, pageSize),
-                new EntityWrapper<Sci>().setSqlSelect("article_id, title, article_image, content, publish_time, create_time")
-                        .eq("status", 1).eq("type", type).
-                        orderDesc(Arrays.asList(new String[] {"publish_time"})));
+        Page records = new Page<>(page, pageSize);
+        if (isLimit == 0) {
+            records = sciService.selectPage(new Page<>(page, pageSize),
+                    new EntityWrapper<Sci>().setSqlSelect("article_id, title, article_image, content, publish_time, create_time")
+                            .eq("status", 1).eq("type", type).eq("is_limit", 0)
+                            .orderDesc(Arrays.asList(new String[] {"publish_time"})));
+        } else if (isLimit == 1){
+            records = sciService.selectPage(new Page<>(page, pageSize),
+                    new EntityWrapper<Sci>().setSqlSelect("article_id, title, article_image, content, publish_time, create_time")
+                            .eq("status", 1).eq("type", type)
+                            .orderDesc(Arrays.asList(new String[] {"publish_time"})));
+        }
         return new Result(200, "获取科研成功", records);
     }
 

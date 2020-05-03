@@ -1,6 +1,6 @@
 // pages/jyz/jyz.js
 var {
-  request
+  request,baseURL
 } = require('../../utils/util.js');
 Page({
 
@@ -8,12 +8,40 @@ Page({
    * 页面的初始数据
    */
   data: {
+    text: ['学院公告','教务公告'],
     list:[],
     pageNum: 1,
     pages: 1,
     height: 0,
     nothing: true,
     itemName:'',
+    type: 1,
+    isLimit: 0,
+    baseUrl: baseURL
+  },
+  /**
+ * 判断是否绑定
+ */
+  check: function () {
+    var that = this;
+    request({
+      url: "user/hasBind",
+    }).then(res => {
+      if (res.status == 200) {
+        if (res.data.res == false) {
+        that.setData({
+          text:  ['学院公告'],
+          isLimit: 0
+        })
+        } else {
+          that.setData({
+            text: ['学院公告', '教务公告'],
+            isLimit: 1
+          })
+        }
+      }
+      that.getList()
+    })
   },
   /**
    * 获取列表
@@ -25,12 +53,14 @@ Page({
       data: {
         page: that.data.pageNum,
         pageSize: 10,
+        isLimit: that.data.isLimit,
+        type: that.data.type
       },
     }).then(res => {
       var data = res.data
       for (var i = 0; i < data.records.length; i++) {
         var listIndex = data.records[i];
-        var time = (listIndex.createTime).split(" ")[0];
+        var time = (listIndex.publishTime).split(" ")[0];
         listIndex.time = time;
       }
       that.setData({
@@ -72,7 +102,17 @@ Page({
         })
       }
     })
-    that.getList();
+    that.check();
+  },
+  choose: function (e) {
+    this.setData({
+      index: e.currentTarget.dataset.id,
+      newsType: e.currentTarget.dataset.id + 1,
+      list: [],
+      pages: 1,
+      pageNum: 1
+    });
+    this.getList();
   },
   /**
    * 跳转

@@ -16,4 +16,22 @@
         <result column="rank" property="rank" />
     </resultMap>
 
+    <select id="getNewsList" resultMap="BaseResultMap">
+        select news_id, news_type, news_title,news_image, news_brief, news_content, news_time, rank from news where
+        status = 1
+        <if test="type != null">
+            and news_type = #{type}
+        </if>
+        <if test="keyword != null">
+            <bind name = "keyword" value="'%' + keyword + '%'"></bind>
+            and news_title like #{keyword}
+        </if>
+        <if test="startTime != null">
+            and create_time &gt; #{startTime}
+        </if>
+        <if test="endTime != null">
+            and create_time &lt; #{endTime}
+        </if>
+        order by rank,create_time desc
+    </select>
 </mapper>

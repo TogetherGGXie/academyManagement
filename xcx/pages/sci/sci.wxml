@@ -11,8 +11,8 @@
         <!-- <view class="read-view">阅读：{{itemName.pageView}}</view> -->
       </view>
       <view wx:if="{{itemName.articleImage != null}}"class="new-image" style="background-image:url({{itemName.articleImage}})"></view>
-      <image class="lian-left" src="https://st-file.yunban.cn/20180524/lian.png"></image>
-      <image class="lian-right" src="https://st-file.yunban.cn/20180524/lian.png"></image>
+      <!-- <image class="lian-left" src="https://st-file.yunban.cn/20180524/lian.png"></image>
+      <image class="lian-right" src="https://st-file.yunban.cn/20180524/lian.png"></image> -->
     </view>
   </scroll-view>
   <view class="nothing {{nothing?'hide':''}}"></view>

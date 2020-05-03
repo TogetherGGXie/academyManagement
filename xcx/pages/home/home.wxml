@@ -14,37 +14,34 @@
   <!-- <view class="all" style="height: calc(100vh - 520rpx); overflow-x: hidden; overflow-y: auto;margin-top: 10rpx;"> -->
   <view class="all">
     <view class="item" data-url="../xygk/xygk" bindtap='turnTo'>
-      <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon01.png')"></view>
+      <view class="icon" style="background-image:url('{{baseUrl}}/icons/xygk.png')"></view>
     </view>
     <view class="item" data-url="../news/news" bindtap='turnTo'>
-      <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon02.png')"></view>
+      <view class="icon" style="background-image:url('{{baseUrl}}/icons/gdxw.png')"></view>
     </view>
     <view class="item" data-url="../notice/notice" bindtap='turnTo'>
-      <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon08.png')"></view>
+      <view class="icon" style="background-image:url('{{baseUrl}}/icons/gdgg.png')"></view>
     </view>
     <view class="long" data-url="../szdw/szdw" bindtap='turnTo'>
-      <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon07.png')"></view>
+      <view class="icon" style="background-image:url('{{baseUrl}}/icons/szdw.png')"></view>
     </view>
     <view class="long" data-url="../sci/sci" bindtap='turnTo'>
-      <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon03.png')"></view>
+      <view class="icon" style="background-image:url('{{baseUrl}}/icons/kydt.png')"></view>
     </view>
     <view class="item" data-url="../hyyy/hyyy" bindtap='turnTo'>
       <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" hover-class="none">
-        <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon04.png')"></view>
+        <view class="icon" style="background-image:url('{{baseUrl}}/icons/hyyy.png')"></view>
       </button>
-      <view class="suo"></view>
     </view>
     <view class="item" data-url="../yjzx/yzyj/yzyj" bindtap='turnTo'>
       <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" hover-class="none">
-        <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon05.png')"></view>
+        <view class="icon" style="background-image:url('{{baseUrl}}/icons/yjzx.png')"></view>
       </button>
-      <!-- <view class="suo"></view> -->
     </view>
     <view class="item" data-url="../zhlj/zhlj" bindtap='turnTo'>
       <!-- <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" hover-class="none"> -->
-        <view class="icon" style="background-image:url('https://st-file.yunban.cn/20180524/icon03.png')"></view>
+        <view class="icon" style="background-image:url('{{baseUrl}}/icons/yqlj.png')"></view>
       <!-- </button> -->
-      <view class="suo"></view>
     </view>
   </view>
 </view>

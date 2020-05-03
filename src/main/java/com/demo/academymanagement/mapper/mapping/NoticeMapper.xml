@@ -8,11 +8,28 @@
         <result column="type" property="type" />
         <result column="title" property="title" />
         <result column="content" property="content" />
+        <result column="is_limit" property="isLimit" />
         <result column="url" property="url" />
         <result column="publish_time" property="publishTime" />
         <result column="status" property="status" />
         <result column="create_time" property="createTime" />
         <result column="image_url" property="imageUrl" />
+
     </resultMap>
 
+    <select id="getNoticeList" resultMap="BaseResultMap">
+        select notice_id, title, content, publish_time, image_url from notice where
+        status = 1
+        <if test="keyword != null">
+            <bind name = "keyword" value="'%' + keyword + '%'"></bind>
+            and title like #{keyword}
+        </if>
+        <if test="startTime != null">
+            and create_time &gt; #{startTime}
+        </if>
+        <if test="endTime != null">
+            and create_time &lt; #{endTime}
+        </if>
+        order by create_time desc
+    </select>
 </mapper>

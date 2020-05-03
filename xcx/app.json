@@ -1,16 +1,11 @@
 {
   "pages": [
     "pages/home/home",
-    "pages/dbhd/dbhd",
     "pages/xygk/xygk",
     "pages/news-detail/news-detail",
     "pages/check/check",
     "pages/yyls/yyls",
-    "pages/group/group",
-    "pages/list/list",
     "pages/news/news",
-    "pages/dbhd-detail/dbhd-detail",
-    "pages/talk/talk",
     "pages/history/history",
     "pages/yjzx/yjzx",
     "pages/notice/notice",
@@ -23,15 +18,7 @@
     "pages/page/page",
     "pages/szdw/szdw",
     "pages/logs/logs",
-    "pages/dbzj/dbzj",
-    "pages/rddbllz/rddbllz",
-    "pages/rddbllz/list/list",
-    "pages/rddbllz/detail/detail",
-    "pages/rddbllz/record/record",
-    "pages/yjzx/yzyj/yzyj",
-    "pages/dbzj/articles/articles",
-    "pages/dbzj/article-content/article-content",
-    "pages/rddbllz/small-areas/small-areas"
+    "pages/yjzx/yzyj/yzyj"
   ],
   "window": {
     "backgroundTextStyle": "light",

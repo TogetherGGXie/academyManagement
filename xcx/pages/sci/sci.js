@@ -16,6 +16,7 @@ Page({
     pageNum: 1,
     pages: 1,
     height: 0,
+    isLimit: 0,
     nothing: true
   },
 
@@ -31,13 +32,37 @@ Page({
         })
       }
     })
-    that.getList();
+    that.check();
   },
   turnTo: function (e) {
     wx.navigateTo({
       url: '../sci-detail/sci-detail?id=' + e.currentTarget.dataset.id,
     })
   },
+
+  /**
+* 判断是否绑定
+*/
+  check: function () {
+    var that = this;
+    request({
+      url: "user/hasBind",
+    }).then(res => {
+      if (res.status == 200) {
+        if (res.data.res == false) {
+          that.setData({
+            isLimit: 0
+          })
+        } else {
+          that.setData({
+            isLimit: 1
+          })
+        }
+      }
+      that.getList()
+    })
+  },
+
   /**
    * 获取工作要闻信息
    */
@@ -48,7 +73,8 @@ Page({
       data: {
         page: that.data.pageNum,
         pageSize: 10,
-        type: that.data.type
+        type: that.data.type,
+        isLimit: that.data.isLimit
       },
     }).then(res => {
       var data = res.data

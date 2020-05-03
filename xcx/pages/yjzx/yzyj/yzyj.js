@@ -14,7 +14,8 @@ Page({
     pages: 1,
     scrollViewHeight: 'auto',
     pageReady: false,
-    getting: true
+    getting: true,
+    baseUrl: baseURL
   },
 
   turnTo(e) {
@@ -82,7 +83,7 @@ Page({
       pages: 1,
       pageNum: 1,
     })
-    this.getList()
+    this.check()
   },
 
   /**
@@ -119,7 +120,28 @@ Page({
   onShareAppMessage: function () {
 
   },
-
+  /**
+   * 判断是否绑定
+   */
+  check: function () {
+    var that = this;
+    request({
+      url: "user/hasBind",
+    }).then(res => {
+      if (res.status == 200) {
+        that.setData({
+          canSubmit: res.data.res
+        })
+      }
+      if (res.data.res == false) {
+        wx.navigateTo({
+          url: '../check/check',
+        })
+      } else {
+        that.getList()
+      }
+    })
+  },
   //api-获取精彩问答数据
   getList: function() {
     console.log(111)
